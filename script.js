@@ -511,15 +511,17 @@ function otvoriProizvod(id) {
     // WHATSAPP
 
     if (modalWhatsapp) {
-
+const modalEmail = document.getElementById("modalEmail");
         const poruka =
             `Pozdrav! Zanima me proizvod ${proizvod.naziv}. Molim više informacija o cijeni i dostupnosti.`;
 
 
-        modalWhatsapp.href =
-            `https://wa.me/?text=${encodeURIComponent(poruka)}`;
+       modalWhatsapp.href =
+    `https://wa.me/385953073251?text=${encodeURIComponent(poruka)}`;
+modalEmail.href =
+    `mailto:aurevonashop@gmail.com?subject=${encodeURIComponent("Upit za " + proizvod.naziv)}&body=${encodeURIComponent(poruka)}`;
+}
 
-    }
 
 
     // OTVORI MODAL
