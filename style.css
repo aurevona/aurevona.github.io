@@ -1084,3 +1084,34 @@ body.modal-open {
 .hero p {
     font-weight: bold;
 }
+/* WHATSAPP I EMAIL GUMBI U PROIZVODU */
+#modalWhatsapp,
+#modalEmail {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #292520;
+    color: #ffffff;
+
+    padding: 20px;
+    margin-top: 14px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    border: none;
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#modalWhatsapp:hover,
+#modalEmail:hover {
+    background: #a77b35;
+    color: #ffffff;
+}
