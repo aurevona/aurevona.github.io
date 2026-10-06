@@ -1,0 +1,1086 @@
+/* =========================
+   AUREVONA - GLAVNI STIL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #faf8f4;
+    color: #252525;
+    line-height: 1.6;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   NAVIGACIJA
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #eee7dc;
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 80px;
+    margin: auto;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    letter-spacing: 6px;
+    font-weight: bold;
+    color: #a77b35;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b38a4a;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    color: #a77b35;
+}
+
+
+/* =========================
+   HERO / POČETNA
+========================= */
+
+.hero {
+    min-height: 78vh;
+    padding: 100px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.25)
+        ),
+        url("slike/chogan-background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-small {
+    color: #a77b35;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(50px, 9vw, 95px);
+    letter-spacing: 12px;
+    font-weight: normal;
+    color: #24211d;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    max-width: 620px;
+    margin: 0 auto 35px;
+    color: #68615a;
+    font-size: 18px;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 15px 32px;
+
+    background: #a77b35;
+    color: white;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+
+    border: 1px solid #a77b35;
+
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: transparent;
+    color: #a77b35;
+}
+
+
+/* =========================
+   ZAJEDNIČKE SEKCIJE
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title p,
+.small-title {
+    color: #a77b35;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.section-title h2,
+.about h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+
+/* =========================
+   KATEGORIJE
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background: #ffffff;
+    padding: 45px 25px;
+    text-align: center;
+    border: 1px solid #eee7dc;
+
+    transition: 0.35s;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 40px rgba(71, 55, 35, 0.08);
+    border-color: #d6bc91;
+}
+
+.category-icon {
+    color: #b38a4a;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.category-card button {
+    border: none;
+    border-bottom: 1px solid #a77b35;
+    background: transparent;
+    color: #a77b35;
+
+    padding: 5px 0;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+
+/* =========================
+   PROIZVODI
+========================= */
+
+.products-section {
+    max-width: none;
+    background: #f3eee7;
+}
+
+.products-section > * {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    overflow: hidden;
+
+    transition: 0.35s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+    height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg, #eee6da, #faf8f4);
+
+    color: #a89b8a;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.product-info {
+    padding: 27px;
+}
+
+.product-category {
+    color: #a77b35;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    margin: 8px 0 10px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.details-btn {
+    background: transparent;
+    border: 1px solid #a77b35;
+    color: #a77b35;
+
+    padding: 10px 17px;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.details-btn:hover {
+    background: #a77b35;
+    color: white;
+}
+
+
+/* =========================
+   O NAMA
+========================= */
+
+.about {
+    padding: 110px 30px;
+    background: #27231f;
+    color: white;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.about h2 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.about-content > p:not(.small-title) {
+    color: #d6d0c9;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   KONTAKT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact-text {
+    max-width: 600px;
+    margin: -25px auto 35px;
+    color: #777;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-buttons a {
+    min-width: 160px;
+    padding: 14px 25px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+
+    transition: 0.3s;
+}
+
+.whatsapp-btn {
+    background: #27231f;
+    color: white;
+    border: 1px solid #27231f;
+}
+
+.whatsapp-btn:hover {
+    background: transparent;
+    color: #27231f;
+}
+
+.email-btn {
+    background: #a77b35;
+    color: white;
+    border: 1px solid #a77b35;
+}
+
+.email-btn:hover {
+    background: transparent;
+    color: #a77b35;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #1d1a17;
+    color: #aaa39b;
+
+    padding: 55px 20px;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    letter-spacing: 7px;
+    color: #d2ad70;
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    margin-top: 25px;
+    opacity: 0.6;
+}
+
+
+/* =========================
+   MOBITEL
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 21px;
+        letter-spacing: 4px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+
+        background: white;
+
+        flex-direction: column;
+        gap: 0;
+
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 17px 25px;
+        border-bottom: 1px solid #f2f2f2;
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: 6px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 75px 20px;
+    }
+
+    .section-title h2,
+    .about h2 {
+        font-size: 32px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .category-grid,
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        letter-spacing: 4px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-buttons a {
+        width: 100%;
+    }
+}
+/* =========================
+   KATALOG ALATI
+========================= */
+
+.catalog-tools {
+    max-width: 900px;
+    margin: 0 auto 45px;
+}
+
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 17px 20px;
+
+    background: white;
+    border: 1px solid #ddd2c3;
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #a77b35;
+    box-shadow: 0 0 0 3px rgba(167, 123, 53, 0.08);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 10px 16px;
+
+    border: 1px solid #d5c5ad;
+    background: transparent;
+    color: #665d52;
+
+    font-size: 11px;
+    letter-spacing: 0.5px;
+
+    transition: 0.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #a77b35;
+    border-color: #a77b35;
+    color: white;
+}
+
+
+/* SLIKE PROIZVODA */
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 20px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.image-placeholder {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    letter-spacing: 4px;
+    color: #b5a895;
+
+    z-index: 1;
+}
+
+
+/* NEMA REZULTATA */
+
+.no-products {
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #777;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+}
+
+
+/* MOBITEL */
+
+@media (max-width: 550px) {
+
+    .filter-buttons {
+        justify-content: flex-start;
+    }
+
+    .filter-btn {
+        flex-grow: 1;
+    }
+
+}
+/* =========================
+   GLAVNA TRAŽILICA
+========================= */
+
+.main-search-section {
+    background: #ffffff;
+    padding: 55px 25px 20px;
+}
+
+.main-search-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.main-search-content > p {
+    color: #a77b35;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 7px;
+}
+
+.main-search-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 22px;
+}
+
+.main-search-section .search-box {
+    position: relative;
+    margin: 0;
+}
+
+.main-search-section .search-box input {
+    padding: 18px 55px 18px 22px;
+    border-radius: 2px;
+    box-shadow: 0 8px 30px rgba(70, 50, 25, 0.06);
+}
+
+.search-icon {
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #a77b35;
+    font-size: 24px;
+
+    pointer-events: none;
+}
+/* =========================
+   PROZOR PROIZVODA
+========================= */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.product-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 5000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.product-modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 17, 14, 0.72);
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    max-height: 90vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #ffffff;
+
+    overflow-y: auto;
+
+    box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+
+    animation: modalOpen 0.3s ease;
+}
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    z-index: 10;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: rgba(255,255,255,0.9);
+
+    color: #27231f;
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+.modal-close:hover {
+    background: #a77b35;
+    color: white;
+}
+
+.modal-image {
+    min-height: 520px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee6da,
+            #faf8f4
+        );
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+
+    max-height: 550px;
+
+    object-fit: contain;
+
+    padding: 35px;
+}
+
+#modalPlaceholder {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #b5a895;
+
+    letter-spacing: 5px;
+
+    font-size: 20px;
+}
+
+.modal-info {
+    padding: 65px 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.modal-category {
+    color: #a77b35;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.modal-info h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 38px;
+
+    font-weight: normal;
+
+    margin-top: 10px;
+
+    color: #27231f;
+}
+
+.modal-line {
+    width: 50px;
+    height: 1px;
+
+    background: #a77b35;
+
+    margin: 25px 0;
+}
+
+.modal-info > p {
+    color: #716a62;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.modal-whatsapp {
+    display: block;
+
+    margin-top: 30px;
+
+    padding: 15px 20px;
+
+    background: #27231f;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-size: 11px;
+
+    border: 1px solid #27231f;
+
+    transition: 0.3s;
+}
+
+.modal-whatsapp:hover {
+    background: #a77b35;
+
+    border-color: #a77b35;
+}
+
+.modal-note {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 11px !important;
+
+    color: #999 !important;
+}
+
+
+/* MOBITEL */
+
+@media (max-width: 700px) {
+
+    .product-modal {
+        padding: 12px;
+    }
+
+    .modal-content {
+        display: block;
+
+        max-height: 94vh;
+    }
+
+    .modal-image {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .modal-image img {
+        max-height: 300px;
+
+        padding: 25px;
+    }
+
+    .modal-info {
+        padding: 35px 25px;
+    }
+
+    .modal-info h2 {
+        font-size: 30px;
+    }
+
+}
+/* ==========================================
+   PAGINACIJA
+========================================== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.page-btn {
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+
+    border: 1px solid #d8c6a6;
+    background: #ffffff;
+    color: #4b4033;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.page-btn:hover {
+    background: #f7f2e9;
+    border-color: #a77b35;
+    color: #a77b35;
+}
+
+.page-btn.active {
+    background: #a77b35;
+    border-color: #a77b35;
+    color: #ffffff;
+}
+.hero h1,
+.hero h2,
+.hero p {
+    color: #000000;
+}
+.hero p {
+    color: #000000;
+    font-weight: bold;
+}
+/* DOBRODOŠLI U */
+.hero p {
+    color: #000000;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 4px #bdbdbd,
+        0 0 7px #a5a5a5;
+}
+
+/* GLAVNI NASLOV AUREVONA */
+.hero h1 {
+    color: #000000;
+
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 5px #d0d0d0,
+        0 0 10px #aaaaaa,
+        0 0 16px #888888;
+}
+
+/* OSTALI TEKST U HERO DIJELU */
+.hero h2 {
+    color: #000000;
+
+    text-shadow:
+        0 0 2px #ffffff,
+        0 0 5px #b5b5b5;
+}
+
+.hero p {
+    font-weight: bold;
+}
