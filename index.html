@@ -1,203 +1,548 @@
 <!DOCTYPE html>
 <html lang="hr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AUREVONA | Svijet mirisa i njege</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AUREVONA – pažljivo odabrani parfemi, mirisi, njega i proizvodi za dom."
+    >
+
+    <title>AUREVONA | Svijet mirisa</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
+<!-- =====================================================
+     NAVIGACIJA
+===================================================== -->
+
 <header>
+
     <nav class="navbar">
 
-        <div class="logo">AUREVONA</div>
+        <a href="#pocetna" class="logo">
+            AUREVONA
+        </a>
 
-        <button class="menu-btn" id="menuBtn">☰</button>
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Otvori izbornik"
+        >
+            ☰
+        </button>
 
         <div class="nav-links" id="navLinks">
+
             <a href="#pocetna">Početna</a>
+
             <a href="#kategorije">Kategorije</a>
-            <a href="#proizvodi">Proizvodi</a>
+
+            <a href="#proizvodi">Kolekcija</a>
+
             <a href="#onama">O nama</a>
+
             <a href="#kontakt">Kontakt</a>
+
         </div>
 
     </nav>
+
 </header>
 
 
 <main>
 
-    <!-- POČETNA -->
-    <section class="hero" id="pocetna">
 
-        <div class="hero-content">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-            <p class="hero-small">DOBRODOŠLI U</p>
+<section class="hero" id="pocetna">
 
-            <h1>AUREVONA</h1>
+    <div class="hero-overlay"></div>
 
-            <p class="hero-text">
-                Otkrijte svijet mirisa, ljepote i pažljivo odabranih proizvoda
-                za svaki trenutak.
-            </p>
+    <div class="hero-content">
+
+        <p class="hero-small">
+            THE ART OF SCENT
+        </p>
+
+        <h1>
+            AUREVONA
+        </h1>
+
+        <div class="hero-line"></div>
+
+        <h2>
+            Miris koji ostavlja dojam.
+        </h2>
+
+        <p class="hero-text">
+            Otkrijte pažljivo odabranu kolekciju mirisa,
+            njege i proizvoda za dom stvorenih za trenutke
+            koji se pamte.
+        </p>
+
+        <div class="hero-buttons">
 
             <a href="#proizvodi" class="main-btn">
-                Istraži proizvode
+                Otkrij kolekciju
+            </a>
+
+            <a href="#kategorije" class="secondary-btn">
+                Istraži kategorije
             </a>
 
         </div>
 
-    </section>
+    </div>
 
-<!-- GLAVNA TRAŽILICA -->
+    <div class="hero-scroll">
+        <span>ISTRAŽI</span>
+        <div></div>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BRAND STRIP
+===================================================== -->
+
+<section class="brand-strip">
+
+    <div class="brand-strip-inner">
+
+        <span>PARFEMI</span>
+        <i>✦</i>
+
+        <span>NJEGA</span>
+        <i>✦</i>
+
+        <span>DOM</span>
+        <i>✦</i>
+
+        <span>LUKSUZ</span>
+        <i>✦</i>
+
+        <span>AUREVONA</span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRAŽILICA
+===================================================== -->
+
 <section class="main-search-section">
 
     <div class="main-search-content">
 
-        <p>PRONAĐITE SVOJ PROIZVOD</p>
+        <p class="eyebrow">
+            AUREVONA COLLECTION
+        </p>
 
-        <h2>Što tražite?</h2>
+        <h2>
+            Pronađite svoj miris
+        </h2>
+
+        <p class="search-intro">
+            Pretražite našu kolekciju i pronađite proizvod
+            koji odgovara vašem stilu.
+        </p>
 
         <div class="search-box">
+
             <input
                 type="text"
                 id="searchInput"
-                placeholder="Pretraži parfeme, njegu, proizvode za dom..."
+                placeholder="Pretraži proizvode..."
+                autocomplete="off"
             >
 
-            <span class="search-icon">⌕</span>
+            <span class="search-icon">
+                ⌕
+            </span>
+
         </div>
 
     </div>
 
 </section>
-    <!-- KATEGORIJE -->
-    <section class="section" id="kategorije">
 
-        <div class="section-title">
-            <p>ISTRAŽI</p>
-            <h2>Naše kategorije</h2>
-        </div>
 
-        <div class="category-grid">
+<!-- =====================================================
+     KATEGORIJE
+===================================================== -->
 
-            <div class="category-card">
-                <div class="category-icon">✦</div>
-                <h3>Ženski parfemi</h3>
-                <p>Mirisi koji ostavljaju trag.</p>
-                <button onclick="otvoriKategoriju('zenski')">Pogledaj</button>
-            </div>
+<section class="section categories-section" id="kategorije">
 
-            <div class="category-card">
-                <div class="category-icon">◆</div>
-                <h3>Muški parfemi</h3>
-                <p>Karakter u svakom mirisu.</p>
-                <button onclick="otvoriKategoriju('muski')">Pogledaj</button>
-            </div>
+    <div class="section-heading">
 
-            <div class="category-card">
-                <div class="category-icon">◇</div>
-                <h3>Unisex parfemi</h3>
-                <p>Mirisi bez granica.</p>
-                <button onclick="otvoriKategoriju('unisex')">Pogledaj</button>
-            </div>
+        <div>
 
-            <div class="category-card">
-    <div class="category-icon">✦</div>
-    <h3>Luksuzni parfemi</h3>
-    <p>Ekskluzivni mirisi za poseban dojam.</p>
-    <button onclick="otvoriKategoriju('luksuzni')">Pogledaj</button>
-</div>
-            
+            <p class="eyebrow">
+                ISTRAŽITE AUREVONU
+            </p>
 
-            <div class="category-card">
-                <div class="category-icon">♡</div>
-                <h3>Njega tijela</h3>
-                <p>Svaki dan zaslužuje malo luksuza.</p>
-                <button onclick="otvoriKategoriju('njega')">Pogledaj</button>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">⌂</div>
-                <h3>Dom</h3>
-                <p>Mirisi i proizvodi za vaš prostor.</p>
-                <button onclick="otvoriKategoriju('dom')">Pogledaj</button>
-            </div>
-            
-            <div class="category-card">
-    <div class="category-icon">🕯️</div>
-    <h3>Mirisne svijeće</h3>
-    <p>Profinjeni mirisi za toplu i ugodnu atmosferu vašeg doma.</p>
-    <button onclick="otvoriKategoriju('svijece')">Pogledaj</button>
-</div>
-            <div class="category-card">
-                <div class="category-icon">+</div>
-                <h3>Ostalo</h3>
-                <p>Otkrijte još pažljivo odabranih proizvoda.</p>
-                <button onclick="otvoriKategoriju('ostalo')">Pogledaj</button>
-            </div>
+            <h2>
+                Kolekcije
+            </h2>
 
         </div>
 
-    </section>
+        <p class="section-description">
+            Od bezvremenskih klasika do suvremenih mirisa.
+            Pronađite kolekciju koja najbolje opisuje vas.
+        </p>
 
-
-   <!-- PROIZVODI -->
-<section class="section products-section" id="proizvodi">
-
-    <div class="section-title">
-        <p>AUREVONA KOLEKCIJA</p>
-        <h2>Izdvojeni Proizvodi</h2>
     </div>
 
-    <!-- TRAŽILICA -->
+
+    <div class="category-grid">
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                01
+            </span>
+
+            <div class="category-icon">
+                ♀
+            </div>
+
+            <h3>
+                Ženski parfemi
+            </h3>
+
+            <p>
+                Elegantni, zavodljivi i prepoznatljivi mirisi.
+            </p>
+
+            <button onclick="otvoriKategoriju('zenski')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                02
+            </span>
+
+            <div class="category-icon">
+                ♂
+            </div>
+
+            <h3>
+                Muški parfemi
+            </h3>
+
+            <p>
+                Karakter, elegancija i snažan potpis.
+            </p>
+
+            <button onclick="otvoriKategoriju('muski')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                03
+            </span>
+
+            <div class="category-icon">
+                ◇
+            </div>
+
+            <h3>
+                Unisex parfemi
+            </h3>
+
+            <p>
+                Mirisi bez granica stvoreni za osobnost.
+            </p>
+
+            <button onclick="otvoriKategoriju('unisex')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card luxury-category">
+
+            <span class="category-number">
+                04
+            </span>
+
+            <div class="category-icon">
+                ✦
+            </div>
+
+            <h3>
+                Luksuzni parfemi
+            </h3>
+
+            <p>
+                Ekskluzivna kolekcija za poseban dojam.
+            </p>
+
+            <button onclick="otvoriKategoriju('luksuzni')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                05
+            </span>
+
+            <div class="category-icon">
+                ♡
+            </div>
+
+            <h3>
+                Njega tijela
+            </h3>
+
+            <p>
+                Svakodnevna njega pretvorena u ritual.
+            </p>
+
+            <button onclick="otvoriKategoriju('njega')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                06
+            </span>
+
+            <div class="category-icon">
+                ⌂
+            </div>
+
+            <h3>
+                Dom
+            </h3>
+
+            <p>
+                Mirisi i detalji koji stvaraju atmosferu.
+            </p>
+
+            <button onclick="otvoriKategoriju('dom')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                07
+            </span>
+
+            <div class="category-icon">
+                ◉
+            </div>
+
+            <h3>
+                Mirisne svijeće
+            </h3>
+
+            <p>
+                Toplina, miris i atmosfera u jednom detalju.
+            </p>
+
+            <button onclick="otvoriKategoriju('svijece')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+        <article class="category-card">
+
+            <span class="category-number">
+                08
+            </span>
+
+            <div class="category-icon">
+                +
+            </div>
+
+            <h3>
+                Ostalo
+            </h3>
+
+            <p>
+                Još pažljivo odabranih AUREVONA proizvoda.
+            </p>
+
+            <button onclick="otvoriKategoriju('ostalo')">
+                Istraži kolekciju
+            </button>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDITORIAL / BRAND PORUKA
+===================================================== -->
+
+<section class="editorial-banner">
+
+    <div class="editorial-inner">
+
+        <p>
+            MIRIS JE VIŠE OD DETALJA
+        </p>
+
+        <h2>
+            Vaš nevidljivi potpis.
+        </h2>
+
+        <div class="editorial-line"></div>
+
+        <p class="editorial-text">
+            Odaberite miris koji govori prije vas
+            i ostaje zapamćen nakon vas.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROIZVODI
+===================================================== -->
+
+<section
+    class="section products-section"
+    id="proizvodi"
+>
+
+    <div class="products-header">
+
+        <div>
+
+            <p class="eyebrow">
+                AUREVONA SELECTION
+            </p>
+
+            <h2>
+                Odabrano za vas
+            </h2>
+
+        </div>
+
+        <p>
+            Otkrijte naš izbor mirisa i proizvoda
+            za svaki stil i svaki trenutak.
+        </p>
+
+    </div>
+
+
     <div class="catalog-tools">
 
-        <div class="search-box">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Pretraži proizvode..."
-    >
-</div>
-
-        <!-- FILTERI -->
         <div class="filter-buttons">
 
-            <button class="filter-btn active" data-category="sve">
+            <button
+                class="filter-btn active"
+                data-category="sve"
+            >
                 Sve
             </button>
 
-            <button class="filter-btn" data-category="zenski">
-                Ženski parfemi
+            <button
+                class="filter-btn"
+                data-category="zenski"
+            >
+                Ženski
             </button>
 
-            <button class="filter-btn" data-category="muski">
-                Muški parfemi
+            <button
+                class="filter-btn"
+                data-category="muski"
+            >
+                Muški
             </button>
 
-            <button class="filter-btn" data-category="unisex">
+            <button
+                class="filter-btn"
+                data-category="unisex"
+            >
                 Unisex
             </button>
-            <button class="filter-btn" data-category="luksuzni">Luksuzni parfemi</button>
-            <button class="filter-btn" data-category="njega">
-                Njega tijela
+
+            <button
+                class="filter-btn"
+                data-category="luksuzni"
+            >
+                Luxury
             </button>
 
-            <button class="filter-btn" data-category="dom">
+            <button
+                class="filter-btn"
+                data-category="njega"
+            >
+                Njega
+            </button>
+
+            <button
+                class="filter-btn"
+                data-category="dom"
+            >
                 Dom
             </button>
 
-            <button class="filter-btn" data-category="svijece">
-    Mirisne svijeće
-</button>
+            <button
+                class="filter-btn"
+                data-category="svijece"
+            >
+                Svijeće
+            </button>
 
-            <button class="filter-btn" data-category="ostalo">
+            <button
+                class="filter-btn"
+                data-category="ostalo"
+            >
                 Ostalo
             </button>
 
@@ -205,96 +550,225 @@
 
     </div>
 
-    <!-- OVDJE JAVASCRIPT AUTOMATSKI DODAJE PROIZVODE -->
-    <div class="product-grid" id="productGrid"></div>
-    <div class="pagination" id="pagination"></div>
-    <p class="no-products" id="noProducts">
+
+    <!-- PROIZVODE AUTOMATSKI DODAJE JAVASCRIPT -->
+
+    <div
+        class="product-grid"
+        id="productGrid"
+    ></div>
+
+
+    <div
+        class="pagination"
+        id="pagination"
+    ></div>
+
+
+    <p
+        class="no-products"
+        id="noProducts"
+    >
         Nema pronađenih proizvoda.
     </p>
 
 </section>
 
 
-    <!-- O NAMA -->
-    <section class="about" id="onama">
+<!-- =====================================================
+     O NAMA
+===================================================== -->
 
-        <div class="about-content">
+<section class="about" id="onama">
 
-            <p class="small-title">NAŠA PRIČA</p>
+    <div class="about-decoration">
+        A
+    </div>
 
-            <h2>Dobrodošli u AUREVONA</h2>
+    <div class="about-content">
 
-            <p>
-                AUREVONA je mjesto na kojem možete otkriti pažljivo
-                odabrane mirise, proizvode za osobnu njegu i proizvode
-                za vaš dom.
-            </p>
+        <p class="small-title">
+            THE AUREVONA STORY
+        </p>
 
-            <p>
-                Pregledajte naš katalog, pronađite proizvod koji vam
-                odgovara i jednostavno nam se javite za više informacija
-                ili narudžbu.
-            </p>
+        <h2>
+            Više od mirisa.
+        </h2>
 
-        </div>
+        <div class="about-line"></div>
 
-    </section>
+        <p class="about-lead">
+            AUREVONA je mjesto na kojem miris,
+            njega i stil postaju dio osobnog izražavanja.
+        </p>
+
+        <p>
+            Naša kolekcija okuplja pažljivo odabrane
+            parfeme, proizvode za osobnu njegu i proizvode
+            za dom kako biste jednostavno pronašli ono
+            što odgovara vašem stilu.
+        </p>
+
+        <p>
+            Pregledajte kolekciju, pronađite svoj proizvod
+            i javite nam se za dostupnost, informacije
+            ili narudžbu.
+        </p>
+
+    </div>
+
+</section>
 
 
-    <!-- KONTAKT -->
-    <section class="section contact" id="kontakt">
+<!-- =====================================================
+     KONTAKT
+===================================================== -->
 
-        <div class="section-title">
+<section class="contact-section" id="kontakt">
 
-            <p>KONTAKTIRAJTE NAS</p>
+    <div class="contact-inner">
 
-            <h2>Pronašli ste nešto za sebe?</h2>
+        <p class="eyebrow">
+            PERSONAL SERVICE
+        </p>
 
-        </div>
+        <h2>
+            Pronašli ste svoj miris?
+        </h2>
 
         <p class="contact-text">
-            Za informacije o proizvodima, dostupnosti i narudžbama
-            slobodno nam se javite.
+            Za cijenu, dostupnost, preporuku ili narudžbu
+            javite nam se. Rado ćemo vam pomoći pronaći
+            pravi proizvod.
         </p>
+
 
         <div class="contact-buttons">
 
-            <a href="#" class="whatsapp-btn">
+            <a
+                href="https://wa.me/385953073251"
+                target="_blank"
+                rel="noopener"
+                class="whatsapp-btn"
+            >
                 WhatsApp
             </a>
 
-            <a href="#" class="email-btn">
+
+            <a
+                href="mailto:aurevonashop@gmail.com"
+                class="email-btn"
+            >
                 E-mail
             </a>
 
         </div>
 
-    </section>
+
+        <div class="contact-details">
+
+            <span>
+                aurevonashop@gmail.com
+            </span>
+
+            <span class="contact-dot">
+                ✦
+            </span>
+
+            <span>
+                095 307 3251
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 </main>
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-    <div class="footer-logo">
-        AUREVONA
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                AUREVONA
+            </div>
+
+            <p>
+                THE ART OF SCENT
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#pocetna">
+                Početna
+            </a>
+
+            <a href="#kategorije">
+                Kolekcije
+            </a>
+
+            <a href="#proizvodi">
+                Proizvodi
+            </a>
+
+            <a href="#onama">
+                O nama
+            </a>
+
+            <a href="#kontakt">
+                Kontakt
+            </a>
+
+        </div>
+
     </div>
 
-    <p>
-        Mirisi • Ljepota • Njega • Dom
-    </p>
 
-    <p class="copyright">
-        © 2026 AUREVONA. Sva prava pridržana.
-    </p>
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 AUREVONA. Sva prava pridržana.
+        </p>
+
+        <p>
+            Mirisi • Ljepota • Njega • Dom
+        </p>
+
+    </div>
 
 </footer>
-<!-- PROZOR DETALJA PROIZVODA -->
-<div class="product-modal" id="productModal">
 
-    <div class="modal-overlay" onclick="zatvoriProizvod()"></div>
+
+<!-- =====================================================
+     MODAL PROIZVODA
+===================================================== -->
+
+<div
+    class="product-modal"
+    id="productModal"
+>
+
+    <div
+        class="modal-overlay"
+        onclick="zatvoriProizvod()"
+    ></div>
+
 
     <div class="modal-content">
+
 
         <button
             class="modal-close"
@@ -304,17 +778,32 @@
             ×
         </button>
 
+
         <div class="modal-image">
-            <img id="modalImage" src="" alt="">
-            <span id="modalPlaceholder">AUREVONA</span>
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+            <span id="modalPlaceholder">
+                AUREVONA
+            </span>
+
         </div>
+
 
         <div class="modal-info">
 
+            <p class="modal-overline">
+                AUREVONA COLLECTION
+            </p>
+
             <span
                 class="modal-category"
-                id="modalCategory">
-            </span>
+                id="modalCategory"
+            ></span>
 
             <h2 id="modalName"></h2>
 
@@ -322,22 +811,34 @@
 
             <p id="modalDescription"></p>
 
-           <a href="#"
-   id="modalWhatsapp"
-   class="modal-contact-btn"
-   target="_blank"
-   rel="noopener">
-    Pošalji upit putem WhatsAppa
-</a>
 
-<a href="#"
-   id="modalEmail"
-   class="modal-contact-btn">
-    Pošalji upit putem e-maila
-</a>
+            <div class="modal-actions">
+
+                <a
+                    href="#"
+                    id="modalWhatsapp"
+                    class="modal-contact-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Pošalji upit putem WhatsAppa
+                </a>
+
+
+                <a
+                    href="#"
+                    id="modalEmail"
+                    class="modal-contact-btn modal-email-btn"
+                >
+                    Pošalji upit putem e-maila
+                </a>
+
+            </div>
+
 
             <p class="modal-note">
-                Za cijenu, dostupnost i dodatne informacije slobodno nam se javite.
+                Za cijenu, dostupnost i dodatne informacije
+                slobodno nam se javite.
             </p>
 
         </div>
@@ -345,8 +846,15 @@
     </div>
 
 </div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="proizvodi.js"></script>
 <script src="script.js"></script>
 
 </body>
+
 </html>
