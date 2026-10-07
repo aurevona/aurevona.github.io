@@ -1,24 +1,23 @@
 let sljedeciId = 1;
 
 function napraviParfem(broj, kategorija, opis, izdvojeno = false) {
-
-    const naziviKategorija = {
-        zenski: "Ženski parfem",
-        muski: "Muški parfem",
-        unisex: "Unisex parfem"
-    };
-
-    const proizvod = {
+    return {
         id: sljedeciId++,
         naziv: `Olfazeta ${broj}`,
         kategorija: kategorija,
-        kategorijaNaziv: naziviKategorija[kategorija],
-        slika: `slike/olfazeta-${broj.toLowerCase()}.png`,
+        kategorijaNaziv:
+            kategorija === "zenski" ? "Ženski parfemi" :
+            kategorija === "muski" ? "Muški parfemi" :
+            kategorija === "unisex" ? "Unisex parfemi" :
+            kategorija === "luksuzni" ? "Luksuzni parfemi" : "Parfemi",
+        slika:
+            kategorija === "zenski" ? "slike/zenski-parfem.png" :
+            kategorija === "muski" ? "slike/muski-parfem.png" :
+            kategorija === "unisex" ? "slike/unisex-parfem.png" :
+            "slike/luksuzni-parfem.png",
         opis: opis,
         izdvojeno: izdvojeno
     };
-
-    return proizvod;
 }
 
 const proizvodi = [
@@ -27,1006 +26,947 @@ const proizvodi = [
     id: 1,
     naziv: "Olfazeta 306",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-306.png",
-    opis: "Elegantan i upečatljiv ženski miris stvoren za žene koje vole ostaviti dojam.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem s profinjenim i zavodljivim mirisnim karakterom.",
     izdvojeno: true
 },
-
 {
     id: 2,
     naziv: "Olfazeta 388",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
-    slika: "slike/olfazeta-388.png",
-    opis: "Snažan i elegantan muški miris za muškarca koji želi ostaviti dojam.",
+    kategorijaNaziv: "Muški parfemi",
+    slika: "slike/muski-parfem.png",
+    opis: "Karakterističan muški parfem snažnog, elegantnog i modernog mirisnog potpisa.",
     izdvojeno: true
 },
-
 {
     id: 3,
     naziv: "Olfazeta 3114",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
-    slika: "slike/olfazeta-3114.png",
-    opis: "Moderan i upečatljiv unisex miris elegantnog karaktera za svaki dan i posebne prilike.",
+    kategorijaNaziv: "Unisex parfemi",
+    slika: "slike/unisex-parfem.png",
+    opis: "Profinjen unisex parfem stvoren za ljubitelje upečatljivih i modernih mirisa.",
     izdvojeno: true
 },
 
 {
     id: 4,
-    naziv: "Olfazeta 307",
+    naziv: "Olfazeta 001",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-307.png",
-    opis: "Elegantan ženski parfem profinjenog i upečatljivog karaktera. Miris stvoren za žene koje vole ostaviti dojam i istaknuti svoju ženstvenost.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem elegantnog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 5,
-    naziv: "Olfazeta 310",
+    naziv: "Olfazeta 002",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-310.png",
-    opis: "Miris koji osvaja bez puno truda. Olfazeta 310 spaja ženstvenu eleganciju s dozom zavodljivosti – idealan za trenutke kada želiš da te pamte.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem stvoren za svakodnevne i posebne trenutke.",
     izdvojeno: false
 },
-
 {
     id: 6,
-    naziv: "Olfazeta 311",
+    naziv: "Olfazeta 003",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-311.png",
-    opis: "Za dane kada običan miris jednostavno nije dovoljan. Olfazeta 311 donosi dozu glamura, ženstvenosti i karaktera koja privlači pažnju gdje god se pojaviš.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski miris s elegantnim i ženstvenim karakterom.",
     izdvojeno: false
 },
-
 {
     id: 7,
-    naziv: "Olfazeta 3151W",
+    naziv: "Olfazeta 004",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3151w.png",
-    opis: "Nježan na prvi susret, nezaboravan nakon njega. Olfazeta 3151W donosi profinjenu ženstvenost i šarm koji savršeno prati svaki trenutak dana.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem za upečatljiv i sofisticiran dojam.",
     izdvojeno: false
 },
-
 {
     id: 8,
-    naziv: "Olfazeta 314",
+    naziv: "Olfazeta 005",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-314.png",
-    opis: "Samouvjeren, ženstven i stvoren da se primijeti. Olfazeta 314 savršen je mirisni potpis za ženu koja voli eleganciju s malo odvažnosti.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris profinjenog karaktera i elegantnog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 9,
-    naziv: "Olfazeta 319",
+    naziv: "Olfazeta 006",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-319.png",
-    opis: "Miris za ženu koja voli biti svoja. Olfazeta 319 odiše šarmom i profinjenošću, ostavljajući iza sebe dojam koji se ne zaboravlja.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem za ljubiteljice elegantnih i izražajnih mirisa.",
     izdvojeno: false
 },
-
 {
     id: 10,
-    naziv: "Olfazeta 323",
+    naziv: "Olfazeta 007",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-323.png",
-    opis: "Elegancija koja govori sama za sebe. Olfazeta 323 donosi profinjen i privlačan karakter, savršen za ženu koja želi da njezin miris bude dio njezina potpisa.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za moderan i elegantan mirisni dojam.",
     izdvojeno: false
 },
-
 {
     id: 11,
-    naziv: "Olfazeta 324",
+    naziv: "Olfazeta 008",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-324.png",
-    opis: "Za trenutke kada želiš ostaviti nešto više od prvog dojma. Olfazeta 324 donosi zavodljiv karakter i dašak luksuza koji privlači pažnju bez pretjerivanja.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris prikladan za različite prilike.",
     izdvojeno: false
 },
-
 {
     id: 12,
-    naziv: "Olfazeta 325",
+    naziv: "Olfazeta 009",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-325.png",
-    opis: "Miris koji prati tvoj ritam – od jutarnje kave do večernjeg izlaska. Olfazeta 325 donosi ženstven, moderan karakter za svaki trenutak u kojem želiš zablistati.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem sofisticiranog i prepoznatljivog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 13,
-    naziv: "Olfazeta 326",
+    naziv: "Olfazeta 010",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-326.png",
-    opis: "Diskretno zavodljiv, a dovoljno upečatljiv da ga primijete. Olfazeta 326 stvoren je za ženu koja svojom pojavom privlači pažnju bez potrebe da je traži.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris koji spaja eleganciju i moderan karakter.",
     izdvojeno: false
 },
-
 {
     id: 14,
-    naziv: "Olfazeta 327",
+    naziv: "Olfazeta 011",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-327.png",
-    opis: "Ženstvenost s dozom tajanstvenosti. Olfazeta 327 ostavlja elegantan mirisni trag koji budi znatiželju i poziva da mu se približiš još jednom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za elegantan svakodnevni dojam.",
     izdvojeno: false
 },
-
 {
     id: 15,
-    naziv: "Olfazeta 328",
+    naziv: "Olfazeta 012",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-328.png",
-    opis: "Miris za trenutke kada želiš biti primijećena, ali ne i predvidljiva. Olfazeta 328 donosi dozu sofisticiranosti i zavodljivog šarma koji ostaje u sjećanju.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan i ženstven parfem izražajnog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 16,
-    naziv: "Olfazeta 329",
+    naziv: "Olfazeta 013",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-329.png",
-    opis: "Nježan dojam s karakterom koji se otkriva kroz vrijeme. Olfazeta 329 stvoren je za ženu koja voli profinjenost, stil i miris koji govori umjesto nje.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem profinjenog i modernog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 17,
-    naziv: "Olfazeta 339",
+    naziv: "Olfazeta 014",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-339.png",
-    opis: "Miris koji spaja nježnu ženstvenost s dozom samopouzdanja. Olfazeta 339 stvoren je za trenutke kada želiš zračiti elegancijom i ostaviti svoj prepoznatljiv trag.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris za ljubiteljice elegantnih i upečatljivih parfema.",
     izdvojeno: false
 },
-
 {
     id: 18,
-    naziv: "Olfazeta 340",
+    naziv: "Olfazeta 015",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-340.png",
-    opis: "Za ženu koja ne prati trendove, već stvara vlastiti stil. Olfazeta 340 donosi upečatljivu dozu elegancije i šarma koja pretvara svakodnevni trenutak u nešto posebno.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem s profinjenim mirisnim karakterom.",
     izdvojeno: false
 },
-
 {
     id: 19,
-    naziv: "Olfazeta 3153W",
+    naziv: "Olfazeta 016",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3153w.png",
-    opis: "Profinjen miris za ženu koja voli spoj elegancije, nježnosti i modernog karaktera.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski miris za poseban i elegantan dojam.",
     izdvojeno: false
 },
-
 {
     id: 20,
-    naziv: "Olfazeta 342",
+    naziv: "Olfazeta 017",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-342.png",
-    opis: "Miris koji unosi dozu samopouzdanja u svaki korak i ostavlja elegantan trag iza sebe.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem modernog i sofisticiranog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 21,
-    naziv: "Olfazeta 3154W",
+    naziv: "Olfazeta 018",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3154w.png",
-    opis: "Nježna ženstvenost susreće moderan stil u mirisu stvorenom za svakodnevne posebne trenutke.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris namijenjen svakodnevnim i posebnim prilikama.",
     izdvojeno: false
 },
-
 {
     id: 22,
-    naziv: "Olfazeta 347",
+    naziv: "Olfazeta 019",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-347.png",
-    opis: "Odvažan mirisni potpis za ženu koja voli biti primijećena i ostati zapamćena.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem izražajnog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 23,
-    naziv: "Olfazeta 349",
+    naziv: "Olfazeta 020",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-349.png",
-    opis: "Šarmantan i profinjen izbor koji svakom danu dodaje malu dozu luksuza.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za elegantan i moderan dojam.",
     izdvojeno: false
 },
-
 {
     id: 24,
-    naziv: "Olfazeta 351",
+    naziv: "Olfazeta 021",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-351.png",
-    opis: "Za ženu koja voli da njezina prisutnost govori prije riječi – elegantno, sigurno i upečatljivo.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris s prepoznatljivim karakterom.",
     izdvojeno: false
 },
-
 {
     id: 25,
-    naziv: "Olfazeta 353",
+    naziv: "Olfazeta 022",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-353.png",
-    opis: "Zavodljiv karakter u elegantnom izdanju, stvoren za večeri i trenutke koje želiš pamtiti.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem za ljubiteljice profinjenih i modernih mirisa.",
     izdvojeno: false
 },
-
 {
     id: 26,
-    naziv: "Olfazeta 354",
+    naziv: "Olfazeta 023",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-354.png",
-    opis: "Suptilan, ženstven i profinjen miris za dane kada želiš nešto nenametljivo, ali posebno.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris elegantnog i sofisticiranog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 27,
-    naziv: "Olfazeta 355",
+    naziv: "Olfazeta 024",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-355.png",
-    opis: "Moderan miris pun karaktera, namijenjen ženi koja eleganciju nosi potpuno prirodno.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za upečatljiv mirisni dojam.",
     izdvojeno: false
 },
-
 {
     id: 28,
-    naziv: "Olfazeta 356",
+    naziv: "Olfazeta 025",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-356.png",
-    opis: "Miris koji donosi osjećaj dotjeranosti i luksuza čak i najobičnijem danu.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem prikladan za različite prilike.",
     izdvojeno: false
 },
-
 {
     id: 29,
-    naziv: "Olfazeta 357",
+    naziv: "Olfazeta 026",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-357.png",
-    opis: "Ženstven i samouvjeren miris za trenutke kada želiš ostaviti snažan prvi dojam.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem profinjenog i izražajnog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 30,
-    naziv: "Olfazeta 3156W",
+    naziv: "Olfazeta 027",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3156w.png",
-    opis: "Nježan šarm i profinjena elegancija spojeni u mirisu koji se lako uklapa u svaki dan.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris koji pruža elegantan i moderan dojam.",
     izdvojeno: false
 },
-
 {
     id: 31,
-    naziv: "Olfazeta 364",
+    naziv: "Olfazeta 028",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-364.png",
-    opis: "Miris za ženu koja voli jednostavnu eleganciju, ali nikada ne želi proći nezapaženo.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem s elegantnim karakterom.",
     izdvojeno: false
 },
-
 {
     id: 32,
-    naziv: "Olfazeta 367",
+    naziv: "Olfazeta 029",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-367.png",
-    opis: "Karakteran i privlačan miris koji svakom pojavljivanju daje dodatnu dozu samopouzdanja.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem za poseban mirisni dojam.",
     izdvojeno: false
 },
-
 {
     id: 33,
-    naziv: "Olfazeta 370",
+    naziv: "Olfazeta 030",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-370.png",
-    opis: "Elegantan izbor za ženu koja voli profinjene detalje i miris koji prati njezin stil.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem modernog i sofisticiranog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 34,
-    naziv: "Olfazeta 371",
+    naziv: "Olfazeta 031",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-371.png",
-    opis: "Miris s dozom tajanstvenosti, stvoren da privuče pažnju bez otkrivanja svega odjednom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski miris za svakodnevnu eleganciju.",
     izdvojeno: false
 },
-
 {
     id: 35,
-    naziv: "Olfazeta 372",
+    naziv: "Olfazeta 032",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-372.png",
-    opis: "Živahan i ženstven karakter za dane kada želiš energiju, stil i dobar osjećaj u jednom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem izražajnog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 36,
-    naziv: "Olfazeta 376",
+    naziv: "Olfazeta 033",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-376.png",
-    opis: "Sofisticiran mirisni dodatak koji se jednako dobro uklapa uz dnevnu eleganciju i večernji izlazak.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem profinjenog i modernog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 37,
-    naziv: "Olfazeta 3158W",
+    naziv: "Olfazeta 034",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3158w.png",
-    opis: "Mekana elegancija i ženstveni šarm za ženu koja voli profinjen, nenametljiv dojam.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris stvoren za elegantan i upečatljiv dojam.",
     izdvojeno: false
 },
-
 {
     id: 38,
-    naziv: "Olfazeta 380",
+    naziv: "Olfazeta 035",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-380.png",
-    opis: "Miris koji djeluje dotjerano od prvog trenutka i savršeno prati samouvjerenu ženu.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem elegantnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 39,
-    naziv: "Olfazeta 381",
+    naziv: "Olfazeta 036",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-381.png",
-    opis: "Zavodljiva elegancija za posebne prilike i večeri u kojima želiš ostaviti trag.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris za ljubiteljice sofisticiranih parfema.",
     izdvojeno: false
 },
-
 {
     id: 40,
-    naziv: "Olfazeta 382",
+    naziv: "Olfazeta 037",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-382.png",
-    opis: "Moderan i ženstven miris koji spaja profinjenost s opuštenim svakodnevnim stilom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem modernog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 41,
-    naziv: "Olfazeta 385",
+    naziv: "Olfazeta 038",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-385.png",
-    opis: "Za ženu snažnog karaktera koja voli da njezin miris bude jednako upečatljiv kao i njezina pojava.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris za elegantan i prepoznatljiv dojam.",
     izdvojeno: false
 },
-
 {
     id: 42,
-    naziv: "Olfazeta 389",
+    naziv: "Olfazeta 039",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-389.png",
-    opis: "Profinjen mirisni potpis s dozom šarma, idealan kada želiš izgled upotpuniti nečim posebnim.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem s modernim mirisnim potpisom.",
     izdvojeno: false
 },
-
 {
     id: 43,
-    naziv: "Olfazeta 390",
+    naziv: "Olfazeta 040",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-390.png",
-    opis: "Samouvjeren i elegantan izbor za ženu koja voli snažan dojam bez pretjerivanja.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem za svakodnevne i posebne trenutke.",
     izdvojeno: false
 },
-
 {
     id: 44,
-    naziv: "Olfazeta 393",
+    naziv: "Olfazeta 041",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-393.png",
-    opis: "Miris koji nosi dozu glamura i pretvara svaki izlazak u priliku da zablistaš.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem profinjenog i sofisticiranog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 45,
-    naziv: "Olfazeta 3159W",
+    naziv: "Olfazeta 042",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3159w.png",
-    opis: "Nježan i elegantan mirisni dodatak za ženu koja voli bezvremenski stil i profinjenost.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris elegantnog i izražajnog mirisnog potpisa.",
     izdvojeno: false
 },
-
 {
     id: 46,
-    naziv: "Olfazeta 396",
+    naziv: "Olfazeta 043",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-396.png",
-    opis: "Od jutra do večeri, ovaj miris donosi osjećaj elegancije i ženstvenosti koji prati svaki korak.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za moderan i elegantan dojam.",
     izdvojeno: false
 },
-
 {
     id: 47,
-    naziv: "Olfazeta 397",
+    naziv: "Olfazeta 044",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-397.png",
-    opis: "Privlačan i moderan miris za ženu koja voli ostaviti dojam svojom pojavom i stilom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem prepoznatljivog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 48,
-    naziv: "Olfazeta 398",
+    naziv: "Olfazeta 045",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-398.png",
-    opis: "Elegantan završni detalj svakog outfita – profinjen, ženstven i stvoren da bude zapamćen.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem za ljubiteljice profinjenih i upečatljivih mirisa.",
     izdvojeno: false
 },
-
 {
     id: 49,
-    naziv: "Olfazeta 3115",
+    naziv: "Olfazeta 046",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3115.png",
-    opis: "Miris s osobnošću za ženu koja voli kombinirati klasičnu eleganciju s modernim stavom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris modernog i elegantnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 50,
-    naziv: "Olfazeta 3116",
+    naziv: "Olfazeta 047",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3116.png",
-    opis: "Ženstven i šarmantan izbor koji svakodnevnim trenucima daje osjećaj posebnosti.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za sofisticiran mirisni dojam.",
     izdvojeno: false
 },
-
 {
     id: 51,
-    naziv: "Olfazeta 3119",
+    naziv: "Olfazeta 048",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3119.png",
-    opis: "Za trenutke kada želiš nešto drugačije – elegantan miris s karakterom koji se pamti.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris prikladan za različite prilike.",
     izdvojeno: false
 },
-
 {
     id: 52,
-    naziv: "Olfazeta 3120",
+    naziv: "Olfazeta 049",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3120.png",
-    opis: "Profinjen i moderan miris koji lako postaje dio tvoje svakodnevne rutine.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem profinjenog i prepoznatljivog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 53,
-    naziv: "Olfazeta 3121",
+    naziv: "Olfazeta 050",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3121.png",
-    opis: "Miris koji odiše ženstvenošću i stilom, stvoren za ženu koja cijeni elegantne detalje.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris za elegantan i moderan mirisni dojam.",
     izdvojeno: false
 },
-
 {
     id: 54,
-    naziv: "Olfazeta 3122",
+    naziv: "Olfazeta 051",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3122.png",
-    opis: "Upečatljiv, ali profinjen – miris za dane kada želiš da tvoja prisutnost ostane zapamćena.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem elegantnog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 55,
-    naziv: "Olfazeta 3131",
+    naziv: "Olfazeta 052",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3131.png",
-    opis: "Doza ženstvenosti i samopouzdanja u mirisu koji se jednako lijepo nosi danju i navečer.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski parfem za upečatljiv i sofisticiran dojam.",
     izdvojeno: false
 },
-
 {
     id: 56,
-    naziv: "Olfazeta 3132",
+    naziv: "Olfazeta 053",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3132.png",
-    opis: "Elegantan miris za ženu koja voli ostaviti sofisticiran dojam bez puno truda.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem modernog i profinjenog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 57,
-    naziv: "Olfazeta 3133",
+    naziv: "Olfazeta 054",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3133.png",
-    opis: "Šarmantan mirisni potpis koji spaja nježnu stranu ženstvenosti s odvažnim karakterom.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski miris za ljubiteljice elegantnih i izražajnih parfema.",
     izdvojeno: false
 },
-
 {
     id: 58,
-    naziv: "Olfazeta 3145",
+    naziv: "Olfazeta 055",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3145.png",
-    opis: "Stvoren za posebne trenutke, ali dovoljno elegantan da postane tvoj omiljeni svakodnevni izbor.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem s elegantnim mirisnim potpisom.",
     izdvojeno: false
 },
-
 {
     id: 59,
-    naziv: "Olfazeta 3148W",
+    naziv: "Olfazeta 056",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3148w.png",
-    opis: "Nježan, dotjeran i ženstven miris koji savršeno nadopunjuje profinjen osobni stil.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Elegantan ženski miris za svakodnevne i posebne trenutke.",
     izdvojeno: false
 },
-
 {
     id: 60,
-    naziv: "Olfazeta 3161W",
+    naziv: "Olfazeta 057",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3161w.png",
-    opis: "Moderan miris za ženu koja voli jednostavnu eleganciju uz malu dozu zavodljivog šarma.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Ženski parfem sofisticiranog i modernog mirisnog karaktera.",
     izdvojeno: false
 },
-
 {
     id: 61,
-    naziv: "Olfazeta 3163W",
+    naziv: "Olfazeta 058",
     kategorija: "zenski",
-    kategorijaNaziv: "Ženski parfem",
-    slika: "slike/olfazeta-3163w.png",
-    opis: "Završni dodir elegancije za ženu koja želi da njezin miris bude jednako poseban kao i njezin stil.",
+    kategorijaNaziv: "Ženski parfemi",
+    slika: "slike/zenski-parfem.png",
+    opis: "Profinjen ženski parfem za elegantan i upečatljiv završni dojam.",
     izdvojeno: false
 },
 {
     id: 62,
-    naziv: "Olfazeta 301",
+    naziv: "Olfazeta 061",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Snažan i samouvjeren miris za muškarca koji voli ostaviti upečatljiv prvi dojam.",
+    opis: "Muški parfem snažnog i elegantnog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 63,
-    naziv: "Olfazeta 302",
+    naziv: "Olfazeta 062",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Elegantan muški miris stvoren za poslovne dane, večernje izlaske i posebne prilike.",
+    opis: "Moderan muški parfem za upečatljiv i profinjen dojam.",
     izdvojeno: false
 },
 {
     id: 64,
-    naziv: "Olfazeta 303",
+    naziv: "Olfazeta 063",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Moderan karakter i doza odvažnosti za muškarca koji uvijek zna što želi.",
+    opis: "Elegantan muški miris izražajnog i sofisticiranog karaktera.",
     izdvojeno: false
 },
 {
     id: 65,
-    naziv: "Olfazeta 304",
+    naziv: "Olfazeta 064",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Mirisni potpis za muškarca koji cijeni jednostavan stil, eleganciju i samopouzdanje.",
+    opis: "Muški parfem modernog i prepoznatljivog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 66,
-    naziv: "Olfazeta 150M",
+    naziv: "Olfazeta 065",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Karakteran i privlačan miris koji savršeno prati muškarca snažne osobnosti.",
+    opis: "Profinjen muški parfem za svakodnevne i posebne prilike.",
     izdvojeno: false
 },
 {
     id: 67,
-    naziv: "Olfazeta 312",
+    naziv: "Olfazeta 066",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Za dane kada želiš izgled upotpuniti mirisom koji odiše sigurnošću i dobrim stilom.",
+    opis: "Elegantan muški miris snažnog i modernog karaktera.",
     izdvojeno: false
 },
 {
     id: 68,
-    naziv: "Olfazeta 315",
+    naziv: "Olfazeta 067",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Muževan i profinjen izbor za muškarca koji voli biti primijećen bez pretjerivanja.",
+    opis: "Muški parfem za ljubitelje profinjenih i izražajnih mirisa.",
     izdvojeno: false
 },
 {
     id: 69,
-    naziv: "Olfazeta 316",
+    naziv: "Olfazeta 068",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Ležeran tijekom dana, dovoljno elegantan za večer – miris spreman pratiti svaki tvoj plan.",
+    opis: "Moderan muški parfem s elegantnim mirisnim karakterom.",
     izdvojeno: false
 },
 {
     id: 70,
-    naziv: "Olfazeta 152M",
+    naziv: "Olfazeta 069",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Samouvjeren mirisni izbor za muškarca koji voli spoj modernog izgleda i klasične elegancije.",
+    opis: "Muški miris sofisticiranog i upečatljivog karaktera.",
     izdvojeno: false
 },
 {
     id: 71,
-    naziv: "Olfazeta 318",
+    naziv: "Olfazeta 070",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Odvažan karakter za trenutke kada želiš da tvoja prisutnost govori sama za sebe.",
+    opis: "Elegantan muški parfem za moderan i prepoznatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 72,
-    naziv: "Olfazeta 320",
+    naziv: "Olfazeta 071",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Dotjeran i moderan miris koji svakodnevnom stilu daje dodatnu dozu profinjenosti.",
+    opis: "Profinjen muški miris snažnog i elegantnog karaktera.",
     izdvojeno: false
 },
 {
     id: 73,
-    naziv: "Olfazeta 321",
+    naziv: "Olfazeta 072",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Miris za muškarca koji ne traži pažnju, ali je svojom pojavom prirodno privlači.",
+    opis: "Muški parfem modernog i sofisticiranog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 74,
-    naziv: "Olfazeta 322",
+    naziv: "Olfazeta 073",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Sofisticiran izbor koji ostavlja dojam urednosti, stila i snažnog karaktera.",
+    opis: "Elegantan muški parfem za upečatljiv mirisni dojam.",
     izdvojeno: false
 },
 {
     id: 75,
-    naziv: "Olfazeta 330",
+    naziv: "Olfazeta 074",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Za muškarca koji voli miris koji može nositi od prvog jutarnjeg sastanka do kasne večeri.",
+    opis: "Muški miris profinjenog i izražajnog karaktera.",
     izdvojeno: false
 },
 {
     id: 76,
-    naziv: "Olfazeta 331",
+    naziv: "Olfazeta 075",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Elegantan karakter s dozom tajanstvenosti za muškarca koji ne otkriva sve na prvi pogled.",
+    opis: "Moderan muški parfem elegantnog i snažnog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 77,
-    naziv: "Olfazeta 332",
+    naziv: "Olfazeta 076",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Snažna osobnost pretočena u mirisni dojam koji se pamti i nakon što odeš.",
+    opis: "Muški parfem za ljubitelje sofisticiranih i upečatljivih mirisa.",
     izdvojeno: false
 },
 {
     id: 78,
-    naziv: "Olfazeta 333",
+    naziv: "Olfazeta 077",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Muški miris modernog duha za svakoga tko voli uredan, samouvjeren i upečatljiv nastup.",
+    opis: "Elegantan muški miris s modernim mirisnim potpisom.",
     izdvojeno: false
 },
 {
     id: 79,
-    naziv: "Olfazeta 337",
+    naziv: "Olfazeta 078",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Profinjen izbor za posebne prilike kada želiš ostaviti ozbiljan i elegantan dojam.",
+    opis: "Profinjen muški parfem za svakodnevnu eleganciju.",
     izdvojeno: false
 },
 {
     id: 80,
-    naziv: "Olfazeta 338",
+    naziv: "Olfazeta 079",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Miris koji prati snažan stav i daje završni detalj muškom stilu.",
+    opis: "Muški parfem snažnog i sofisticiranog karaktera.",
     izdvojeno: false
 },
 {
     id: 81,
-    naziv: "Olfazeta 348",
+    naziv: "Olfazeta 080",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Upečatljiv bez potrebe za pretjerivanjem – za muškarca koji bira kvalitetan i dotjeran dojam.",
+    opis: "Moderan muški miris za elegantan i upečatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 82,
-    naziv: "Olfazeta 160M",
+    naziv: "Olfazeta 081",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Miris za muškarca koji spaja opuštenost, sigurnost i prirodan osjećaj za stil.",
+    opis: "Elegantan muški parfem profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 83,
-    naziv: "Olfazeta 352",
+    naziv: "Olfazeta 082",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Od dnevnih obaveza do večernjeg izlaska, ovaj miris prati tempo modernog muškarca.",
+    opis: "Muški parfem modernog i izražajnog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 84,
-    naziv: "Olfazeta 361",
+    naziv: "Olfazeta 083",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Samouvjeren i profinjen mirisni potpis za muškarca koji zna vrijednost dobrog prvog dojma.",
+    opis: "Profinjen muški miris za poseban i elegantan dojam.",
     izdvojeno: false
 },
 {
     id: 85,
-    naziv: "Olfazeta 362",
+    naziv: "Olfazeta 084",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Jednostavan, moderan i karakteran izbor koji lako postaje dio svakodnevnog stila.",
+    opis: "Elegantan muški parfem snažnog i prepoznatljivog karaktera.",
     izdvojeno: false
 },
 {
     id: 86,
-    naziv: "Olfazeta 3157M",
+    naziv: "Olfazeta 085",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Doza elegancije i muževnog karaktera za trenutke kada želiš ostaviti snažan dojam.",
+    opis: "Muški parfem za ljubitelje modernih i sofisticiranih mirisa.",
     izdvojeno: false
 },
 {
     id: 87,
-    naziv: "Olfazeta 368",
+    naziv: "Olfazeta 086",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Miris za muškarca kojem nisu potrebni veliki potezi da bi pokazao samopouzdanje.",
+    opis: "Moderan muški parfem elegantnog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 88,
-    naziv: "Olfazeta 373",
+    naziv: "Olfazeta 087",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Privlačan i elegantan karakter za večeri, izlaske i prilike u kojima želiš nešto posebno.",
+    opis: "Muški miris snažnog i profinjenog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 89,
-    naziv: "Olfazeta 3113",
+    naziv: "Olfazeta 088",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Moderan mirisni potpis koji spaja samopouzdanje, stil i nenametljivu eleganciju.",
+    opis: "Elegantan muški parfem za svakodnevne i posebne trenutke.",
     izdvojeno: false
 },
 {
     id: 90,
-    naziv: "Olfazeta 3136",
+    naziv: "Olfazeta 089",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Za muškarca koji voli biti svoj – karakteran, dotjeran i spreman ostaviti trag.",
+    opis: "Profinjen muški parfem modernog i izražajnog karaktera.",
     izdvojeno: false
 },
 {
     id: 91,
-    naziv: "Olfazeta 3140",
+    naziv: "Olfazeta 090",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Miris koji svakom izdanju dodaje ozbiljnost, eleganciju i dozu muškog šarma.",
+    opis: "Muški parfem elegantnog i sofisticiranog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 92,
-    naziv: "Olfazeta 3147",
+    naziv: "Olfazeta 091",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Samouvjeren izbor za muškarca koji cijeni profinjenost, ali voli zadržati odvažan karakter.",
+    opis: "Moderan muški miris za upečatljiv i profinjen dojam.",
     izdvojeno: false
 },
 {
     id: 93,
-    naziv: "Olfazeta 3162M",
+    naziv: "Olfazeta 092",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Uredan i sofisticiran mirisni dojam koji pristaje muškarcu s jasnim osjećajem za stil.",
+    opis: "Elegantan muški parfem snažnog i modernog karaktera.",
     izdvojeno: false
 },
 {
     id: 94,
-    naziv: "Olfazeta 3164M",
+    naziv: "Olfazeta 093",
     kategorija: "muski",
-    kategorijaNaziv: "Muški parfem",
+    kategorijaNaziv: "Muški parfemi",
     slika: "slike/muski-parfem.png",
-    opis: "Završni detalj za muškarca koji želi spojiti eleganciju, karakter i samopouzdanje u jednom mirisu.",
+    opis: "Muški parfem profinjenog i prepoznatljivog mirisnog karaktera.",
     izdvojeno: false
 },
 
 {
     id: 95,
-    naziv: "Olfazeta 3444",
+    naziv: "Olfazeta 3101",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Moderan miris bez granica, stvoren za svakoga tko voli izražajan i samouvjeren stil.",
+    opis: "Unisex parfem modernog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 96,
-    naziv: "Olfazeta 3155U",
+    naziv: "Olfazeta 3102",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Profinjen izbor koji spaja eleganciju i suvremeni karakter u mirisu za svaki trenutak.",
+    opis: "Elegantan unisex miris za upečatljiv i sofisticiran dojam.",
     izdvojeno: false
 },
 {
     id: 97,
-    naziv: "Olfazeta 360",
+    naziv: "Olfazeta 3103",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Miris za one koji ne vole pravila – upečatljiv, moderan i spreman pratiti vlastiti stil.",
+    opis: "Profinjen unisex parfem za ljubitelje modernih mirisa.",
     izdvojeno: false
 },
 {
     id: 98,
-    naziv: "Olfazeta 366",
+    naziv: "Olfazeta 3104",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Elegantan mirisni potpis koji jednako dobro pristaje opuštenim danima i posebnim večerima.",
+    opis: "Unisex parfem elegantnog i izražajnog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 99,
-    naziv: "Olfazeta 369",
+    naziv: "Olfazeta 3105",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Karakteran i privlačan izbor za svakoga tko želi miris koji se izdvaja iz svakodnevice.",
+    opis: "Moderan unisex miris profinjenog i prepoznatljivog karaktera.",
     izdvojeno: false
 },
 {
     id: 100,
-    naziv: "Olfazeta 399",
+    naziv: "Olfazeta 3106",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Samouvjeren miris za osobe koje vole jednostavnost, stil i dozu tajanstvenosti.",
+    opis: "Elegantan unisex parfem za svakodnevne i posebne prilike.",
     izdvojeno: false
 },
 {
     id: 101,
-    naziv: "Olfazeta 3100",
+    naziv: "Olfazeta 3107",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Suvremen i profinjen miris koji se prilagođava tvojem stilu, raspoloženju i trenutku.",
+    opis: "Unisex parfem modernog i sofisticiranog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 102,
-    naziv: "Olfazeta 3105",
+    naziv: "Olfazeta 3108",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Miris s osobnošću za one koji žele ostaviti dojam bez potrebe da budu poput drugih.",
+    opis: "Profinjen unisex miris za elegantan i upečatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 103,
-    naziv: "Olfazeta 3110",
+    naziv: "Olfazeta 3109",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Minimalistički, elegantan i upečatljiv izbor koji lako postaje dio svakodnevnog stila.",
+    opis: "Unisex parfem izražajnog i modernog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 104,
-    naziv: "Olfazeta 3135",
+    naziv: "Olfazeta 3110",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Za one koji biraju miris prema karakteru, a ne pravilima – moderan, elegantan i poseban.",
+    opis: "Elegantan unisex parfem profinjenog karaktera.",
     izdvojeno: false
 },
 {
     id: 105,
-    naziv: "Olfazeta 3142",
+    naziv: "Olfazeta 3111",
     kategorija: "unisex",
-    kategorijaNaziv: "Unisex parfem",
+    kategorijaNaziv: "Unisex parfemi",
     slika: "slike/unisex-parfem.png",
-    opis: "Svestran mirisni potpis s dozom elegancije za svaki dan, svaku priliku i svaki stil.",
+    opis: "Moderan unisex miris za sofisticiran i prepoznatljiv dojam.",
     izdvojeno: false
 },
 
@@ -1034,248 +974,244 @@ const proizvodi = [
     id: 106,
     naziv: "Olfazeta Luxury 074",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Ekskluzivan miris za one koji traže nešto više od svakodnevnog parfema. Olfazeta Luxury 074 odiše prestižem, karakterom i profinjenim stilom.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem elegantnog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 106,
     naziv: "Olfazeta Luxury 074",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Ekskluzivan miris za one koji traže nešto više od svakodnevnog parfema. Elegantan karakter i luksuzan dojam u svakom trenutku.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem elegantnog i profinjenog mirisnog karaktera.",
     izdvojeno: false
 },
 {
     id: 107,
     naziv: "Olfazeta Luxury 075",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Sofisticiran mirisni potpis namijenjen onima koji cijene profinjenost, stil i posebnost.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem sofisticiranog i upečatljivog karaktera.",
     izdvojeno: false
 },
 {
     id: 108,
-    naziv: "Olfazeta Luxury 102",
+    naziv: "Olfazeta Luxury 076",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Miris luksuznog karaktera koji upotpunjuje elegantan stil i ostavlja upečatljiv dojam.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni miris stvoren za elegantan i poseban dojam.",
     izdvojeno: false
 },
 {
     id: 109,
-    naziv: "Olfazeta Luxury 130",
+    naziv: "Olfazeta Luxury 077",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Odvažan i profinjen izbor za posebne trenutke u kojima želiš da tvoj miris govori umjesto tebe.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Profinjen luksuzni parfem izražajnog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 110,
-    naziv: "Olfazeta Luxury 134",
+    naziv: "Olfazeta Luxury 078",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Elegancija pretočena u miris – stvoren za one koji vole ekskluzivan i dotjeran mirisni potpis.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan miris modernog i sofisticiranog karaktera.",
     izdvojeno: false
 },
 {
     id: 111,
-    naziv: "Olfazeta Luxury 138",
+    naziv: "Olfazeta Luxury 079",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-074.png",
-    opis: "Poseban miris za posebne prilike, s karakterom koji donosi osjećaj luksuza i samopouzdanja.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem za profinjen i upečatljiv mirisni dojam.",
     izdvojeno: false
 },
 {
     id: 113,
-    naziv: "Olfazeta Luxury 109",
+    naziv: "Olfazeta Luxury 081",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Profinjen luksuzni miris za one koji vole elegantan stil i upečatljiv mirisni potpis.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Elegantan luksuzni miris sofisticiranog karaktera.",
     izdvojeno: false
 },
 {
     id: 114,
-    naziv: "Olfazeta Luxury 111",
+    naziv: "Olfazeta Luxury 082",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Ekskluzivan izbor koji svakom trenutku daje dozu sofisticiranosti i posebnog karaktera.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem modernog i profinjenog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 115,
-    naziv: "Olfazeta Luxury 112",
+    naziv: "Olfazeta Luxury 083",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Miris stvoren za one koji žele spoj elegancije, samopouzdanja i luksuznog dojma.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem za elegantan i prepoznatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 116,
-    naziv: "Olfazeta Luxury 123",
+    naziv: "Olfazeta Luxury 084",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Poseban mirisni potpis za trenutke kada želiš nešto profinjeno, moderno i nezaboravno.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Profinjen luksuzni miris izražajnog karaktera.",
     izdvojeno: false
 },
 {
     id: 117,
-    naziv: "Olfazeta Luxury 137",
+    naziv: "Olfazeta Luxury 085",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Doza luksuza za svaki dan, namijenjena onima koji cijene detalje i elegantan osobni stil.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem za sofisticiran i upečatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 118,
-    naziv: "Olfazeta Luxury 139",
+    naziv: "Olfazeta Luxury 086",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Odvažan i sofisticiran miris koji ostavlja snažan dojam bez potrebe za pretjerivanjem.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni miris modernog i elegantnog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 119,
-    naziv: "Olfazeta Luxury 143",
+    naziv: "Olfazeta Luxury 087",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Elegantan miris za posebne prilike i trenutke u kojima želiš istaknuti svoj jedinstveni stil.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Profinjen luksuzni parfem za poseban mirisni dojam.",
     izdvojeno: false
 },
 {
     id: 120,
-    naziv: "Olfazeta Luxury 144",
+    naziv: "Olfazeta Luxury 088",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-101.png",
-    opis: "Luksuzan završni detalj koji spaja profinjenost, karakter i osjećaj ekskluzivnosti.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Elegantan luksuzni parfem sofisticiranog karaktera.",
     izdvojeno: false
 },
 {
     id: 121,
-    naziv: "Olfazeta Luxury 106",
+    naziv: "Olfazeta Luxury 089",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Raskošan mirisni izbor koji odiše prestižem i sofisticiranošću. Stvoren za trenutke kada želiš ostaviti snažan i nezaboravan dojam.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan miris za elegantan i upečatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 122,
-    naziv: "Olfazeta Luxury 117",
+    naziv: "Olfazeta Luxury 090",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Raskošan mirisni potpis za one koji vole luksuz, eleganciju i prisutnost koja se pamti.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem modernog i profinjenog karaktera.",
     izdvojeno: false
 },
 {
     id: 123,
-    naziv: "Olfazeta Luxury 124",
+    naziv: "Olfazeta Luxury 091",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Ekskluzivan izbor koji svakom pojavljivanju daje profinjen i samouvjeren završni detalj.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Profinjen luksuzni miris prepoznatljivog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 124,
-    naziv: "Olfazeta Luxury 126",
+    naziv: "Olfazeta Luxury 092",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Miris luksuznog karaktera namijenjen onima koji žele nešto posebno, elegantno i upečatljivo.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem sofisticiranog i elegantnog karaktera.",
     izdvojeno: false
 },
 {
     id: 125,
-    naziv: "Olfazeta Luxury 127",
+    naziv: "Olfazeta Luxury 093",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Odvažan mirisni izbor koji spaja sofisticiranost s dozom prestiža za nezaboravan dojam.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem za moderan i upečatljiv mirisni dojam.",
     izdvojeno: false
 },
 {
     id: 126,
-    naziv: "Olfazeta Luxury 128",
+    naziv: "Olfazeta Luxury 094",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Stvoren za posebne trenutke u kojima želiš naglasiti svoj stil i ostaviti elegantan mirisni trag.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Elegantan luksuzni miris profinjenog karaktera.",
     izdvojeno: false
 },
 {
     id: 127,
-    naziv: "Olfazeta Luxury 141",
+    naziv: "Olfazeta Luxury 095",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-106.png",
-    opis: "Spoj luksuznog dojma i modernog karaktera za one koji biraju miris jednako pažljivo kao i svoj stil.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem modernog i sofisticiranog mirisnog potpisa.",
     izdvojeno: false
 },
 {
     id: 128,
-    naziv: "Olfazeta Luxury 118",
+    naziv: "Olfazeta Luxury 096",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-118.png",
-    opis: "Odvažan luksuzni miris za one koji vole snažan karakter, profinjen stil i dojam koji se dugo pamti.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem elegantnog i izražajnog karaktera.",
     izdvojeno: false
 },
 {
     id: 129,
-    naziv: "Olfazeta Luxury 146",
+    naziv: "Olfazeta Luxury 097",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-118.png",
-    opis: "Elegantan i upečatljiv mirisni izbor koji spaja ekskluzivnost, samopouzdanje i moderan luksuz.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Profinjen luksuzni miris za poseban i prepoznatljiv dojam.",
     izdvojeno: false
 },
 {
     id: 130,
-    naziv: "Olfazeta Luxury 125",
+    naziv: "Olfazeta Luxury 098",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-125.png",
-    opis: "Upečatljiv luksuzni miris modernog karaktera, stvoren za one koji vole eleganciju s dozom odvažnosti.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Ekskluzivan parfem elegantnog i modernog karaktera.",
     izdvojeno: false
 },
 {
     id: 131,
-    naziv: "Olfazeta Luxury 129",
+    naziv: "Olfazeta Luxury 099",
     kategorija: "luksuzni",
-    kategorijaNaziv: "Luksuzni parfem",
-    slika: "slike/luxury-125.png",
-    opis: "Ekskluzivan mirisni izbor koji ostavlja dojam profinjenosti, samopouzdanja i jedinstvenog osobnog stila.",
+    kategorijaNaziv: "Luksuzni parfemi",
+    slika: "slike/luksuzni-parfem.png",
+    opis: "Luksuzni parfem sofisticiranog i upečatljivog mirisnog potpisa.",
     izdvojeno: false
 },
-
-// ==========================================
-// MIRISNE SVIJEĆE
-// ==========================================
 
 {
     id: 132,
     naziv: "ROSÉA – Ruža i cimet",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/svijeca-rosea.jpg",
-    opis: "Ruža i cimet. Elegantan miris koji spaja profinjenost ruže sa začinskom slatkoćom cimeta. Dostupna u veličinama 400 g (COPC001) i 190 g (COPC002).",
+    slika: "slike/rosea-ruza-cimet.jpg",
+    opis: "Mirisna svijeća s elegantnom kombinacijom ruže i cimeta za toplu i ugodnu atmosferu.",
     izdvojeno: false
 },
 {
@@ -1283,8 +1219,8 @@ const proizvodi = [
     naziv: "MUSKÉ – Bijeli mošus",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/svijeca-muske.jpg",
-    opis: "Bijeli mošus. Zavodljiv miris koji spaja čistoću bijelog mošusa sa slatkim i začinskim notama. Dostupna u veličinama 400 g (COPC003) i 190 g (COPC004).",
+    slika: "slike/muske-bijeli-mosus.jpg",
+    opis: "Mirisna svijeća s nježnim i profinjenim karakterom bijelog mošusa.",
     izdvojeno: false
 },
 {
@@ -1292,8 +1228,8 @@ const proizvodi = [
     naziv: "LAVÉA – Baršunasta lavanda",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/svijeca-lavea.jpg",
-    opis: "Baršunasta lavanda. Umirujući miris lavande za osjećaj mira i harmonije. Dostupna u veličinama 400 g (COPC005) i 190 g (COPC006).",
+    slika: "slike/lavea-barsunasta-lavanda.jpg",
+    opis: "Mirisna svijeća s umirujućim i elegantnim mirisom baršunaste lavande.",
     izdvojeno: false
 },
 {
@@ -1301,8 +1237,8 @@ const proizvodi = [
     naziv: "MÉLIA – Med i jasmin",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/svijeca-melia.jpg",
-    opis: "Med i jasmin. Topao miris koji prostoru daje ugodnu i živopisnu atmosferu. Dostupna u veličinama 400 g (COPC007) i 190 g (COPC008).",
+    slika: "slike/melia-med-jasmin.jpg",
+    opis: "Mirisna svijeća koja spaja toplinu meda s profinjenim cvjetnim karakterom jasmina.",
     izdvojeno: false
 },
 {
@@ -1310,8 +1246,8 @@ const proizvodi = [
     naziv: "NOIRÉ – Slatko drvo",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/svijeca-noire.jpg",
-    opis: "Slatko drvo. Topao i elegantan miris za profinjenu i uravnoteženu atmosferu. Dostupna u veličinama 400 g (COPC009) i 190 g (COPC010).",
+    slika: "slike/noire-slatko-drvo.jpg",
+    opis: "Mirisna svijeća toplog i elegantnog karaktera sa slatkim drvenastim mirisnim dojmom.",
     izdvojeno: false
 },
 {
@@ -1319,8 +1255,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Purple Mocha",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-purple-mocha.jpg",
-    opis: "Automatska olovka za usne MoniAmori s baršunastim završetkom, kremastom teksturom i dugotrajnom vodootpornom formulom. Nijansa Purple Mocha.",
+    slika: "extra-lipstay-purple-mocha.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Purple Mocha.",
     izdvojeno: false
 },
 {
@@ -1328,8 +1264,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Berry Kiss",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-berry-kiss.jpg",
-    opis: "Automatska olovka za usne MoniAmori za precizno definiranje usana. Veganska i vodootporna formula. Nijansa Berry Kiss.",
+    slika: "extra-lipstay-berry-kiss.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Berry Kiss.",
     izdvojeno: false
 },
 {
@@ -1337,8 +1273,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Royal Mauve",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-royal-mauve.png",
-    opis: "Kremasta automatska olovka za usne s bogatom bojom i baršunastim završetkom. Nijansa Royal Mauve.",
+    slika: "extra-lipstay-royal-mauve.png",
+    opis: "Dugotrajni proizvod za usne u nijansi Royal Mauve.",
     izdvojeno: false
 },
 {
@@ -1346,8 +1282,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Dark Cocoa",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-dark-cocoa.jpg",
-    opis: "Dugotrajna automatska olovka za usne s mekanom teksturom za precizne konture. Nijansa Dark Cocoa.",
+    slika: "extra-lipstay-dark-cocoa.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Dark Cocoa.",
     izdvojeno: false
 },
 {
@@ -1355,8 +1291,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Chili Love",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-chili-love.jpg",
-    opis: "Automatska olovka za usne MoniAmori s baršunastim završetkom. Nijansa Chili Love.",
+    slika: "extra-lipstay-chili-love.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Chili Love.",
     izdvojeno: false
 },
 {
@@ -1364,8 +1300,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Chic Peach",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-chic-peach.jpg",
-    opis: "Kremasta olovka za precizno definiranje i naglašavanje usana. Nijansa Chic Peach.",
+    slika: "extra-lipstay-chic-peach.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Chic Peach.",
     izdvojeno: false
 },
 {
@@ -1373,8 +1309,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Pinky Doll",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-pinky-doll.jpg",
-    opis: "Automatska olovka za usne s bogatom bojom i dugotrajnim učinkom. Nijansa Pinky Doll.",
+    slika: "extra-lipstay-pinky-doll.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Pinky Doll.",
     izdvojeno: false
 },
 {
@@ -1382,8 +1318,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Ruby Flame",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-ruby-flame.jpg",
-    opis: "MoniAmori automatska olovka za usne s mekanom i kremastom teksturom. Nijansa Ruby Flame.",
+    slika: "extra-lipstay-ruby-flame.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Ruby Flame.",
     izdvojeno: false
 },
 {
@@ -1391,8 +1327,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Toffee Nude",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-toffee-nude.jpg",
-    opis: "Automatska olovka za usne za precizne konture i elegantan baršunasti završetak. Nijansa Toffee Nude.",
+    slika: "extra-lipstay-toffee-nude.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Toffee Nude.",
     izdvojeno: false
 },
 {
@@ -1400,8 +1336,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Blush Sand",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-blush-sand.jpg",
-    opis: "Kremasta automatska olovka za usne s dugotrajnom formulom. Nijansa Blush Sand.",
+    slika: "extra-lipstay-blush-sand.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Blush Sand.",
     izdvojeno: false
 },
 {
@@ -1409,8 +1345,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Dusty Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-dusty-rose.jpg",
-    opis: "Automatska olovka za usne s baršunastim završetkom i bogatom bojom. Nijansa Dusty Rose.",
+    slika: "extra-lipstay-dusty-rose.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Dusty Rose.",
     izdvojeno: false
 },
 {
@@ -1418,8 +1354,8 @@ const proizvodi = [
     naziv: "Extra-LipStay – Velvet Taupe",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/extra-lipstay-velvet-taupe.jpg",
-    opis: "MoniAmori automatska olovka za usne s mekanom teksturom i preciznim nanošenjem. Nijansa Velvet Taupe.",
+    slika: "extra-lipstay-velvet-taupe.jpg",
+    opis: "Dugotrajni proizvod za usne u nijansi Velvet Taupe.",
     izdvojeno: false
 },
 {
@@ -1427,8 +1363,8 @@ const proizvodi = [
     naziv: "MoniAmori Supreme Lip Treatment – Malina",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/supreme-lip-treatment-malina.jpg",
-    opis: "Intenzivni višenamjenski tretman za usne s mirisom maline. Kremasta veganska formula hidratizira, omekšava i štiti usne te im daje sjajan i njegovan izgled.",
+    slika: "supreme-lip-treatment-malina.jpg",
+    opis: "Njegujući tretman za usne s mirisom maline.",
     izdvojeno: false
 },
 {
@@ -1436,8 +1372,8 @@ const proizvodi = [
     naziv: "MoniAmori Supreme Lip Treatment – Jagoda",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/supreme-lip-treatment-jagoda.jpg",
-    opis: "Intenzivni tretman za usne s mirisom jagode. Kremasta veganska formula pruža dugotrajnu hidrataciju, ugodu i sjajan završetak.",
+    slika: "supreme-lip-treatment-jagoda.jpg",
+    opis: "Njegujući tretman za usne s mirisom jagode.",
     izdvojeno: false
 },
 {
@@ -1445,8 +1381,8 @@ const proizvodi = [
     naziv: "MoniAmori Supreme Lip Treatment – Vanilija",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/supreme-lip-treatment-vanilija.jpg",
-    opis: "Njegujući tretman za usne s mirisom vanilije, namijenjen hidrataciji, omekšavanju i zaštiti usana.",
+    slika: "supreme-lip-treatment-vanilija.jpg",
+    opis: "Njegujući tretman za usne s mirisom vanilije.",
     izdvojeno: false
 },
 {
@@ -1454,8 +1390,8 @@ const proizvodi = [
     naziv: "Neutralni balzam za usne",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/neutralni-balzam-za-usne.jpg",
-    opis: "Prirodni hidratantni balzam za svakodnevnu njegu usana. Pomaže održati usne mekanima, njegovanima i hidratiziranima. 4,5 ml.",
+    slika: "neutralni-balzam-za-usne.jpg",
+    opis: "Neutralni balzam namijenjen njezi i ugodnom osjećaju usana.",
     izdvojeno: false
 },
 {
@@ -1463,8 +1399,8 @@ const proizvodi = [
     naziv: "LOLLILIP – Salty Caramel",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/lollilip-salty-caramel.jpg",
-    opis: "Njegujući proizvod za usne Aurodhea u varijanti Salty Caramel, stvoren za mekane, njegovane i hidratizirane usne.",
+    slika: "lollilip-salty-caramel.jpg",
+    opis: "Proizvod za usne u varijanti Salty Caramel.",
     izdvojeno: false
 },
 {
@@ -1472,8 +1408,8 @@ const proizvodi = [
     naziv: "LOLLILIP – Spiced Cookie",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/lollilip-spiced-cookie.jpg",
-    opis: "Njegujući proizvod za usne Aurodhea u varijanti Spiced Cookie, za ugodan osjećaj te mekane i njegovane usne.",
+    slika: "lollilip-spiced-cookie.jpg",
+    opis: "Proizvod za usne u varijanti Spiced Cookie.",
     izdvojeno: false
 },
 {
@@ -1481,8 +1417,8 @@ const proizvodi = [
     naziv: "Spicy Gloss – Extra Volume",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/spicy-gloss-extra-volume.jpg",
-    opis: "Sjajilo za usne s efektom dodatnog volumena. Naglašava usne sjajnim završetkom i punijim izgledom. 7 ml.",
+    slika: "spicy-gloss-extra-volume.jpg",
+    opis: "Sjajilo za usne osmišljeno za naglašen sjaj i efekt dodatnog volumena.",
     izdvojeno: false
 },
 {
@@ -1490,8 +1426,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Red Velvet",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-red-velvet.jpg",
-    opis: "Mat tekući ruž intenzivne boje i visoke pokrivne moći. Lagana formula pruža gladak, postojan i elegantan mat završetak.",
+    slika: "mat-tekuci-ruz-red-velvet.jpg",
+    opis: "Mat tekući ruž u nijansi Red Velvet.",
     izdvojeno: false
 },
 {
@@ -1499,8 +1435,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Ruby",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-ruby.jpg",
-    opis: "Intenzivno pigmentirani tekući ruž u nijansi Ruby s dugotrajnim mat završetkom.",
+    slika: "mat-tekuci-ruz-ruby.jpg",
+    opis: "Mat tekući ruž u Ruby nijansi.",
     izdvojeno: false
 },
 {
@@ -1508,8 +1444,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Magenta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-magenta.jpg",
-    opis: "Mat tekući ruž bogate Magenta nijanse. Pruža intenzivnu boju, visoku pokrivenost i dugotrajan završetak.",
+    slika: "mat-tekuci-ruz-magenta.jpg",
+    opis: "Mat tekući ruž u Magenta nijansi.",
     izdvojeno: false
 },
 {
@@ -1517,8 +1453,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Dark Plum",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-dark-plum.jpg",
-    opis: "Mat tekući ruž u dubokoj Dark Plum nijansi s intenzivnom pigmentacijom i elegantnim mat završetkom.",
+    slika: "mat-tekuci-ruz-dark-plum.jpg",
+    opis: "Mat tekući ruž u nijansi Dark Plum.",
     izdvojeno: false
 },
 {
@@ -1526,8 +1462,8 @@ const proizvodi = [
     naziv: "Dugotrajni mat tekući ruž – Bold Pink",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-bold-pink.jpg",
-    opis: "Dugotrajni mat tekući ruž u izražajnoj Bold Pink nijansi. Pruža bogatu pokrivenost, brzo se suši i ostavlja gladak mat završetak.",
+    slika: "mat-tekuci-ruz-bold-pink.jpg",
+    opis: "Dugotrajni mat tekući ruž u nijansi Bold Pink.",
     izdvojeno: false
 },
 {
@@ -1535,8 +1471,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – First Magenta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-first-magenta.jpg",
-    opis: "Tekući ruž intenzivne First Magenta nijanse s laganom formulom, potpunom pokrivenošću i dugotrajnom bojom.",
+    slika: "mat-tekuci-ruz-first-magenta.jpg",
+    opis: "Mat tekući ruž u nijansi First Magenta.",
     izdvojeno: false
 },
 {
@@ -1544,8 +1480,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Coral Red",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-coral-red.jpg",
-    opis: "Mat tekući ruž u Coral Red nijansi. Intenzivna pigmentacija i lagana tekstura pružaju potpunu pokrivenost i dugotrajan rezultat.",
+    slika: "mat-tekuci-ruz-coral-red.jpg",
+    opis: "Mat tekući ruž u nijansi Coral Red.",
     izdvojeno: false
 },
 {
@@ -1553,8 +1489,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Dark Mauve",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-dark-mauve.jpg",
-    opis: "Tekući mat ruž u elegantnoj Dark Mauve nijansi s intenzivnom bojom, mekom teksturom i dugotrajnim završetkom.",
+    slika: "mat-tekuci-ruz-dark-mauve.jpg",
+    opis: "Mat tekući ruž u nijansi Dark Mauve.",
     izdvojeno: false
 },
 {
@@ -1562,8 +1498,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Light Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-light-rose.jpg",
-    opis: "Mat tekući ruž intenzivne i pokrivne boje. Lagana i mekana formula pruža dugotrajan mat završetak i precizno nanošenje. Nijansa Light Rose.",
+    slika: "mat-tekuci-ruz-light-rose.jpg",
+    opis: "Mat tekući ruž u nijansi Light Rose.",
     izdvojeno: false
 },
 {
@@ -1571,8 +1507,8 @@ const proizvodi = [
     naziv: "Mat ruž za usne – Unique Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-ruz-unique-rose.jpg",
-    opis: "Kremasti mat ruž koji se lako nanosi i ostavlja gladak, baršunast sloj na usnama. Pruža udobnost i hidrataciju uz elegantan mat završetak. 5 g.",
+    slika: "mat-ruz-unique-rose.jpg",
+    opis: "Mat ruž za usne u nijansi Unique Rose.",
     izdvojeno: false
 },
 {
@@ -1580,8 +1516,8 @@ const proizvodi = [
     naziv: "Mat ruž za usne – Raspberry",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-ruz-raspberry.jpg",
-    opis: "Mat ruž kremaste teksture u nijansi Raspberry. Pruža glatku i baršunastu boju te ugodan osjećaj na usnama. 5 g.",
+    slika: "mat-ruz-raspberry.jpg",
+    opis: "Mat ruž za usne u Raspberry nijansi.",
     izdvojeno: false
 },
 {
@@ -1589,8 +1525,8 @@ const proizvodi = [
     naziv: "Mat ruž za usne – Watermelon",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-ruz-watermelon.jpg",
-    opis: "Mat ruž za usne u nijansi Watermelon. Lagana i kremasta formula pruža glatku boju, udobnost i precizno nanošenje. 5 g.",
+    slika: "mat-ruz-watermelon.jpg",
+    opis: "Mat ruž za usne u Watermelon nijansi.",
     izdvojeno: false
 },
 {
@@ -1598,8 +1534,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Azalea",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-azalea.jpg",
-    opis: "Sjajni ruž kremaste teksture u nijansi Azalea. Lako se nanosi te ostavlja prirodan, blistav i postojan sloj na usnama. 5 g.",
+    slika: "sjajni-ruz-azalea.jpg",
+    opis: "Sjajni ruž za usne u Azalea nijansi.",
     izdvojeno: false
 },
 {
@@ -1607,8 +1543,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Dark Nude",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-dark-nude.jpg",
-    opis: "Sjajni ruž za usne u elegantnoj Dark Nude nijansi s kremastom teksturom i blistavim završetkom.",
+    slika: "sjajni-ruz-dark-nude.jpg",
+    opis: "Sjajni ruž za usne u nijansi Dark Nude.",
     izdvojeno: false
 },
 {
@@ -1616,8 +1552,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Magenta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-magenta.jpg",
-    opis: "Sjajni ruž intenzivne Magenta nijanse koji usnama pruža bogatu boju i blistav završni izgled.",
+    slika: "sjajni-ruz-magenta.jpg",
+    opis: "Sjajni ruž za usne u Magenta nijansi.",
     izdvojeno: false
 },
 {
@@ -1625,8 +1561,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Strawberry",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-strawberry.jpg",
-    opis: "Sjajni ruž za usne u Strawberry nijansi. Kremasta tekstura pruža ugodan osjećaj, intenzivnu boju i sjajan završetak.",
+    slika: "sjajni-ruz-strawberry.jpg",
+    opis: "Sjajni ruž za usne u Strawberry nijansi.",
     izdvojeno: false
 },
 {
@@ -1634,8 +1570,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Cyclamen",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-cyclamen.jpg",
-    opis: "Mat tekući ruž intenzivne i izuzetno pokrivne boje. Mekana i lagana formula pruža dugotrajnu boju otpornu na poljupce. Nijansa Cyclamen.",
+    slika: "mat-tekuci-ruz-cyclamen.jpg",
+    opis: "Mat tekući ruž u Cyclamen nijansi.",
     izdvojeno: false
 },
 {
@@ -1643,8 +1579,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Poppy Red",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-poppy-red.jpg",
-    opis: "Mat tekući ruž bogate Poppy Red nijanse s intenzivnom pigmentacijom, potpunom pokrivenošću i dugotrajnim završetkom.",
+    slika: "mat-tekuci-ruz-poppy-red.jpg",
+    opis: "Mat tekući ruž u nijansi Poppy Red.",
     izdvojeno: false
 },
 {
@@ -1652,8 +1588,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Peach",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-peach.jpg",
-    opis: "Mat tekući ruž u Peach nijansi. Mekana i lagana formula pruža intenzivnu boju, potpunu pokrivenost i dugotrajan rezultat.",
+    slika: "mat-tekuci-ruz-peach.jpg",
+    opis: "Mat tekući ruž u Peach nijansi.",
     izdvojeno: false
 },
 {
@@ -1661,8 +1597,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Rosy Hibiscus",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-rosy-hibiscus.jpg",
-    opis: "Mat tekući ruž u Rosy Hibiscus nijansi s intenzivnom bojom i laganom formulom koja pruža potpunu pokrivenost.",
+    slika: "mat-tekuci-ruz-rosy-hibiscus.jpg",
+    opis: "Mat tekući ruž u nijansi Rosy Hibiscus.",
     izdvojeno: false
 },
 {
@@ -1670,8 +1606,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Rosé Biscuit",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-rose-biscuit.jpg",
-    opis: "Mat tekući ruž u elegantnoj Rosé Biscuit nijansi. Pruža intenzivnu, dugotrajnu boju i mekan osjećaj na usnama.",
+    slika: "mat-tekuci-ruz-rose-biscuit.jpg",
+    opis: "Mat tekući ruž u nijansi Rosé Biscuit.",
     izdvojeno: false
 },
 {
@@ -1679,8 +1615,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Raspberry Red",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-raspberry-red.jpg",
-    opis: "Mat tekući ruž u Raspberry Red nijansi s visokom pokrivnom moći i dugotrajnom bojom otpornom na poljupce.",
+    slika: "mat-tekuci-ruz-raspberry-red.jpg",
+    opis: "Mat tekući ruž u nijansi Raspberry Red.",
     izdvojeno: false
 },
 {
@@ -1688,8 +1624,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Rosy Brown",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-rosy-brown.jpg",
-    opis: "Mat tekući ruž u Rosy Brown nijansi. Lagana formula pruža bogatu pigmentaciju, potpunu pokrivenost i dugotrajan završetak.",
+    slika: "mat-tekuci-ruz-rosy-brown.jpg",
+    opis: "Mat tekući ruž u nijansi Rosy Brown.",
     izdvojeno: false
 },
 {
@@ -1697,8 +1633,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Fire Red",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-fire-red.jpg",
-    opis: "Mat tekući ruž u upečatljivoj Fire Red nijansi s intenzivnom bojom i dugotrajnim mat završetkom.",
+    slika: "mat-tekuci-ruz-fire-red.jpg",
+    opis: "Mat tekući ruž u nijansi Fire Red.",
     izdvojeno: false
 },
 {
@@ -1706,8 +1642,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Peony",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-peony.jpg",
-    opis: "Mat tekući ruž u Peony nijansi s mekanom i laganom formulom koja pruža intenzivnu i dugotrajnu boju.",
+    slika: "mat-tekuci-ruz-peony.jpg",
+    opis: "Mat tekući ruž u Peony nijansi.",
     izdvojeno: false
 },
 {
@@ -1715,8 +1651,8 @@ const proizvodi = [
     naziv: "Mat tekući ruž – Cherry",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/mat-tekuci-ruz-cherry.jpg",
-    opis: "Mat tekući ruž u Cherry nijansi. Intenzivna pigmentacija pruža potpunu pokrivenost i dugotrajan mat završetak.",
+    slika: "mat-tekuci-ruz-cherry.jpg",
+    opis: "Mat tekući ruž u Cherry nijansi.",
     izdvojeno: false
 },
 {
@@ -1724,8 +1660,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Koraljni",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-koraljni.jpg",
-    opis: "Intenzivno pigmentirani sjajni ruž koji se lako nanosi i ostavlja prirodan, blistav i postojan sloj na usnama. Kremasta formula pruža ugodu i hidrataciju. 5 g.",
+    slika: "sjajni-ruz-koraljni.jpg",
+    opis: "Sjajni ruž za usne u koraljnoj nijansi.",
     izdvojeno: false
 },
 {
@@ -1733,8 +1669,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Svijetlo Nude",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-svijetlo-nude.jpg",
-    opis: "Sjajni ruž u elegantnoj Svijetlo Nude nijansi. Kremasta tekstura topi se na usnama te pruža glatku boju, hidrataciju i blistav završetak. 5 g.",
+    slika: "sjajni-ruz-svijetlo-nude.jpg",
+    opis: "Sjajni ruž za usne u svijetloj Nude nijansi.",
     izdvojeno: false
 },
 {
@@ -1742,8 +1678,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Trešnja",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-tresnja.jpg",
-    opis: "Intenzivno pigmentirani sjajni ruž u nijansi Trešnja. Lagana i kremasta formula pruža precizno nanošenje, ugodu i sjajan završni izgled. 5 g.",
+    slika: "sjajni-ruz-tresnja.jpg",
+    opis: "Sjajni ruž za usne u nijansi trešnje.",
     izdvojeno: false
 },
 {
@@ -1751,8 +1687,8 @@ const proizvodi = [
     naziv: "Sjajni ruž za usne – Candy Pink",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/sjajni-ruz-candy-pink.jpg",
-    opis: "Sjajni ruž u Candy Pink nijansi koji usnama daje prirodan i blistav izgled. Kremasta formula pruža ugodu, hidrataciju i glatku boju.",
+    slika: "sjajni-ruz-candy-pink.jpg",
+    opis: "Sjajni ruž za usne u nijansi Candy Pink.",
     izdvojeno: false
 },
 {
@@ -1760,8 +1696,8 @@ const proizvodi = [
     naziv: "MoniAmori Juicy Oil – Grožđe",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-juicy-oil-grozde.png",
-    opis: "Hranjivo ulje za usne s mirisom grožđa koje pruža intenzivan sjaj, udobnost i hidrataciju. Lagana i neljepljiva formula njeguje usne i daje im sočan, sjajan izgled.",
+    slika: "moniamori-juicy-oil-grozde.png",
+    opis: "Juicy Oil za usne u varijanti Grožđe.",
     izdvojeno: false
 },
 {
@@ -1769,8 +1705,8 @@ const proizvodi = [
     naziv: "MoniAmori Juicy Oil – Crna trešnja",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-juicy-oil-crna-tresnja.png",
-    opis: "Hranjivo ulje za usne s mirisom crne trešnje. Pruža sjaj i hidrataciju uz laganu, neljepljivu teksturu koja usne ostavlja mekanima i njegovanima.",
+    slika: "moniamori-juicy-oil-crna-tresnja.png",
+    opis: "Juicy Oil za usne u varijanti Crna trešnja.",
     izdvojeno: false
 },
 {
@@ -1778,8 +1714,8 @@ const proizvodi = [
     naziv: "MoniAmori Juicy Oil – Liči",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-juicy-oil-lici.png",
-    opis: "Hidratantno ulje za usne s mirisom ličija. Njegujuća formula daje usnama sjajan i sočan izgled te pomaže održati njihovu mekoću i hidrataciju.",
+    slika: "moniamori-juicy-oil-lici.png",
+    opis: "Juicy Oil za usne u varijanti Liči.",
     izdvojeno: false
 },
 {
@@ -1787,8 +1723,8 @@ const proizvodi = [
     naziv: "MoniAmori Juicy Oil – Kokos",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-juicy-oil-kokos.png",
-    opis: "Hranjivo ulje za usne s mirisom kokosa. Lagana formula pruža intenzivan sjaj, ugodan osjećaj i njegu bez ljepljivog završetka.",
+    slika: "moniamori-juicy-oil-kokos.png",
+    opis: "Juicy Oil za usne u varijanti Kokos.",
     izdvojeno: false
 },
 {
@@ -1796,8 +1732,8 @@ const proizvodi = [
     naziv: "MoniAmori Juicy Oil – Lubenica",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-juicy-oil-lubenica.png",
-    opis: "Hidratantno ulje za usne s mirisom lubenice. Njegujuća i neljepljiva formula pruža sjaj, mekoću i hidrataciju te naglašava prirodnu ljepotu usana.",
+    slika: "moniamori-juicy-oil-lubenica.png",
+    opis: "Juicy Oil za usne u varijanti Lubenica.",
     izdvojeno: false
 },
 {
@@ -1805,8 +1741,8 @@ const proizvodi = [
     naziv: "Chogan Extra Plumping sjajilo za usne – Maxi format",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/chogan-extra-plumping-sjajilo.jpg",
-    opis: "Kremasti i lagani gel-balzam koji naglašava prirodnu ljepotu usana. Njeguje, omekšava i revitalizira suhe usne te pruža trenutačni efekt punijeg izgleda i intenzivan sjaj. 7 ml.",
+    slika: "chogan-extra-plumping-sjajilo.jpg",
+    opis: "Kremasti gel-balzam za usne s Maxi-Lipom, ekstraktom đumbira i oleorezinom paprike. Osmišljen za sjaj i efekt punijih usana. 7 ml.",
     izdvojeno: false
 },
 {
@@ -1814,8 +1750,8 @@ const proizvodi = [
     naziv: "MoniAmori MyLip Secret – Peel Off ruž",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/moniamori-mylip-secret.jpg",
-    opis: "Dugotrajna peel-off tinta za usne s efektom tetovaže. Visokoučinkoviti pigmenti pružaju intenzivnu boju otpornu na razmazivanje, dok Aloe Vera i Pantenol pomažu hidratizirati i umiriti usne.",
+    slika: "moniamori-mylip-secret.jpg",
+    opis: "Peel Off proizvod za usne iz linije MoniAmori MyLip Secret.",
     izdvojeno: false
 },
 {
@@ -1823,8 +1759,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Wild Magenta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-wild-magenta.jpg",
-    opis: "Olovka za oči u upečatljivoj Wild Magenta nijansi, idealna za naglašavanje očiju i kreiranje izražajnog make-up izgleda.",
+    slika: "olovka-za-oci-wild-magenta.jpg",
+    opis: "Olovka za oči u nijansi Wild Magenta.",
     izdvojeno: false
 },
 {
@@ -1832,8 +1768,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Soft Butter",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-soft-butter.jpg",
-    opis: "Olovka za oči u nježnoj Soft Butter nijansi, idealna za svijetle detalje i sofisticiran make-up izgled.",
+    slika: "olovka-za-oci-soft-butter.jpg",
+    opis: "Olovka za oči u nijansi Soft Butter.",
     izdvojeno: false
 },
 {
@@ -1841,8 +1777,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Crystal Blue",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-crystal-blue.jpg",
-    opis: "Olovka za oči u upečatljivoj Crystal Blue nijansi koja očima daje izražajan i moderan izgled.",
+    slika: "olovka-za-oci-crystal-blue.jpg",
+    opis: "Olovka za oči u nijansi Crystal Blue.",
     izdvojeno: false
 },
 {
@@ -1850,8 +1786,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Green Jungle",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-green-jungle.jpg",
-    opis: "Olovka za oči u intenzivnoj Green Jungle nijansi za naglašavanje pogleda i kreiranje kreativnih make-up kombinacija.",
+    slika: "olovka-za-oci-green-jungle.jpg",
+    opis: "Olovka za oči u nijansi Green Jungle.",
     izdvojeno: false
 },
 {
@@ -1859,8 +1795,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Midnight Blue",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-midnight-blue.jpg",
-    opis: "Olovka za oči u dubokoj Midnight Blue nijansi koja pruža elegantnu alternativu klasičnim tamnim tonovima.",
+    slika: "olovka-za-oci-midnight-blue.jpg",
+    opis: "Olovka za oči u nijansi Midnight Blue.",
     izdvojeno: false
 },
 {
@@ -1868,8 +1804,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Dark Truffle",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-dark-truffle.jpg",
-    opis: "Olovka za oči u elegantnoj Dark Truffle nijansi, prikladna za svakodnevni i večernji make-up.",
+    slika: "olovka-za-oci-dark-truffle.jpg",
+    opis: "Olovka za oči u nijansi Dark Truffle.",
     izdvojeno: false
 },
 {
@@ -1877,8 +1813,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Silver Moon",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-silver-moon.jpg",
-    opis: "Olovka za oči u Silver Moon nijansi za svjetlucave detalje i efektno naglašavanje pogleda.",
+    slika: "olovka-za-oci-silver-moon.jpg",
+    opis: "Olovka za oči u nijansi Silver Moon.",
     izdvojeno: false
 },
 {
@@ -1886,8 +1822,8 @@ const proizvodi = [
     naziv: "Olovka za oči – Bold Orchid",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/olovka-za-oci-bold-orchid.jpg",
-    opis: "Olovka za oči u odvažnoj Bold Orchid nijansi za intenzivan, moderan i upečatljiv make-up izgled.",
+    slika: "olovka-za-oci-bold-orchid.jpg",
+    opis: "Olovka za oči u nijansi Bold Orchid.",
     izdvojeno: false
 },
 {
@@ -1895,8 +1831,8 @@ const proizvodi = [
     naziv: "Paleta sjenila za oči – Summer Breeze",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/paleta-sjenila-summer-breeze.jpg",
-    opis: "Paleta s 9 sjenila za oči intenzivnih boja i efektnog završetka. Visoko pigmentirana kremasta tekstura stapa se s kapcima i pruža dugotrajnu boju te profesionalan rezultat već pri prvom nanošenju. 18 g.",
+    slika: "paleta-sjenila-summer-breeze.jpg",
+    opis: "Paleta sjenila Summer Breeze za kreiranje različitih make-up izgleda.",
     izdvojeno: false
 },
 {
@@ -1904,8 +1840,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Black",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-black.jpg",
-    opis: "Visoko pigmentirano kompaktno sjenilo svilenkaste i lagane teksture. Pruža čistu, ujednačenu i dugotrajnu boju s blistavim reflektirajućim završetkom. 3 g.",
+    slika: "shiny-sjenilo-black.jpg",
+    opis: "SHINY kompaktno sjenilo u Black nijansi.",
     izdvojeno: false
 },
 {
@@ -1913,8 +1849,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Pearl Tiffany",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-pearl-tiffany.jpg",
-    opis: "Visoko pigmentirano kompaktno sjenilo svilenkaste teksture koje pruža ravnomjernu i dugotrajnu boju s blistavim reflektirajućim završetkom. 3 g.",
+    slika: "shiny-sjenilo-pearl-tiffany.jpg",
+    opis: "SHINY kompaktno sjenilo u Pearl Tiffany nijansi.",
     izdvojeno: false
 },
 {
@@ -1922,8 +1858,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Pearl Lilac",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-pearl-lilac.jpg",
-    opis: "Kompaktno sjenilo visoke pigmentacije u Pearl Lilac nijansi. Lagana i svilenkasta tekstura pruža dugotrajnu pokrivenost i blistav završetak. 3 g.",
+    slika: "shiny-sjenilo-pearl-lilac.jpg",
+    opis: "SHINY kompaktno sjenilo u Pearl Lilac nijansi.",
     izdvojeno: false
 },
 {
@@ -1931,8 +1867,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Teal",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-teal.jpg",
-    opis: "Visoko pigmentirano kompaktno sjenilo u Teal nijansi koje pruža čistu i ujednačenu boju te blistav, reflektirajući završetak. 3 g.",
+    slika: "shiny-sjenilo-teal.jpg",
+    opis: "SHINY kompaktno sjenilo u Teal nijansi.",
     izdvojeno: false
 },
 {
@@ -1940,8 +1876,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Pearl Grey",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-pearl-grey.jpg",
-    opis: "Svilenkasto kompaktno sjenilo u Pearl Grey nijansi s visokom pigmentacijom i dugotrajnom pokrivenošću. Stvara elegantan blistavi završetak. 3 g.",
+    slika: "shiny-sjenilo-pearl-grey.jpg",
+    opis: "SHINY kompaktno sjenilo u Pearl Grey nijansi.",
     izdvojeno: false
 },
 {
@@ -1949,8 +1885,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – White",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-white.jpg",
-    opis: "Visoko pigmentirano SHINY sjenilo u White nijansi. Lagana tekstura dobro prianja uz kapak i pruža blistav, reflektirajući završetak. 3 g.",
+    slika: "shiny-sjenilo-white.jpg",
+    opis: "SHINY kompaktno sjenilo u White nijansi.",
     izdvojeno: false
 },
 {
@@ -1958,8 +1894,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Dark Brown",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-dark-brown.jpg",
-    opis: "Kompaktno sjenilo u Dark Brown nijansi s visokom pigmentacijom, svilenkastom teksturom i dugotrajnom pokrivenošću. 3 g.",
+    slika: "shiny-sjenilo-dark-brown.jpg",
+    opis: "SHINY kompaktno sjenilo u Dark Brown nijansi.",
     izdvojeno: false
 },
 {
@@ -1967,8 +1903,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Sand",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-sand.jpg",
-    opis: "Visoko pigmentirano kompaktno sjenilo u Sand nijansi. Svilenkasta i lagana tekstura pruža čistu, ujednačenu i dugotrajnu boju s blistavim reflektirajućim završetkom. 3 g.",
+    slika: "shiny-sjenilo-sand.jpg",
+    opis: "SHINY kompaktno sjenilo u Sand nijansi.",
     izdvojeno: false
 },
 {
@@ -1976,8 +1912,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Bronze",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-bronze.jpg",
-    opis: "Visoko pigmentirano kompaktno sjenilo u Bronze nijansi. Lagana i svilenkasta tekstura savršeno prianja uz kapak i pruža dugotrajnu boju s blistavim završetkom. 3 g.",
+    slika: "shiny-sjenilo-bronze.jpg",
+    opis: "SHINY kompaktno sjenilo u Bronze nijansi.",
     izdvojeno: false
 },
 {
@@ -1985,8 +1921,8 @@ const proizvodi = [
     naziv: "SHINY kompaktno sjenilo – Ice Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shiny-sjenilo-ice-rose.jpg",
-    opis: "Kompaktno sjenilo u Ice Rose nijansi s visokom pigmentacijom i svilenkastom teksturom. Pruža dugotrajnu pokrivenost i blistav reflektirajući završetak. 3 g.",
+    slika: "shiny-sjenilo-ice-rose.jpg",
+    opis: "SHINY kompaktno sjenilo u Ice Rose nijansi.",
     izdvojeno: false
 },
 {
@@ -1994,8 +1930,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Pearly Peach",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-pearly-peach.jpg",
-    opis: "Pudrasto SHIMMER sjenilo intenzivne boje i izrazito blistavog završetka. Kremasta i visoko pokrivna tekstura stapa se s kapkom i pruža dugotrajnu boju. 3,5 g.",
+    slika: "shimmer-sjenilo-pearly-peach.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Pearly Peach nijansi.",
     izdvojeno: false
 },
 {
@@ -2003,8 +1939,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Pearl Ivory",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-pearl-ivory.jpg",
-    opis: "SHIMMER kompaktno sjenilo u Pearl Ivory nijansi. Visoko pokrivna kremasta tekstura pruža intenzivnu, dugotrajnu boju i sjajan završetak već pri prvom nanošenju. 3,5 g.",
+    slika: "shimmer-sjenilo-pearl-ivory.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Pearl Ivory nijansi.",
     izdvojeno: false
 },
 {
@@ -2012,8 +1948,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Copper",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-copper.jpg",
-    opis: "Pudrasto sjenilo u Copper nijansi s intenzivnim sjajnim završetkom. Kremasta tekstura pruža bogatu, čistu i dugotrajnu boju. 3,5 g.",
+    slika: "shimmer-sjenilo-copper.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Copper nijansi.",
     izdvojeno: false
 },
 {
@@ -2021,8 +1957,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Metallic Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-metallic-rose.jpg",
-    opis: "SHIMMER sjenilo u Metallic Rose nijansi s bogatom pigmentacijom i blistavim završetkom. Kremasta tekstura stapa se s kapkom i pruža dugotrajnu boju. 3,5 g.",
+    slika: "shimmer-sjenilo-metallic-rose.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Metallic Rose nijansi.",
     izdvojeno: false
 },
 {
@@ -2030,8 +1966,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Bronze",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-bronze.jpg",
-    opis: "Visoko pokrivno SHIMMER sjenilo u Bronze nijansi. Kremasta tekstura pruža intenzivnu, dugotrajnu boju i upečatljiv sjajni završetak. 3,5 g.",
+    slika: "shimmer-sjenilo-bronze.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Bronze nijansi.",
     izdvojeno: false
 },
 {
@@ -2039,8 +1975,8 @@ const proizvodi = [
     naziv: "SHIMMER kompaktno sjenilo – Antique Pink",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/shimmer-sjenilo-antique-pink.jpg",
-    opis: "SHIMMER kompaktno sjenilo u Antique Pink nijansi s intenzivnom pigmentacijom i izrazitim sjajem. Kremasta tekstura pruža dugotrajnu boju i blistav izgled. 3,5 g.",
+    slika: "shimmer-sjenilo-antique-pink.jpg",
+    opis: "SHIMMER kompaktno sjenilo u Antique Pink nijansi.",
     izdvojeno: false
 },
 {
@@ -2048,7 +1984,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Brick",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-brick.jpg",
+    slika: "matte-sjenilo-brick.jpg",
     opis: "Kompaktno sjenilo izuzetno meke teksture s intenzivnom pigmentacijom i izrazito mat završetkom. Visoko pokrivni pigmenti omogućuju jednostavno nanošenje. 3 g.",
     izdvojeno: false
 },
@@ -2057,7 +1993,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Ivy",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-ivy.jpg",
+    slika: "matte-sjenilo-ivy.jpg",
     opis: "MATTE sjenilo u Ivy nijansi s mekanom i ugodnom teksturom. Pruža intenzivnu pigmentaciju, visoku pokrivnost i izražen mat završetak. 3 g.",
     izdvojeno: false
 },
@@ -2066,7 +2002,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Azure",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-azure.jpg",
+    slika: "matte-sjenilo-azure.jpg",
     opis: "Kompaktno sjenilo u Azure nijansi s mekom i bogatom teksturom. Pruža trenutnu intenzivnu boju i izražen mat efekt. 3 g.",
     izdvojeno: false
 },
@@ -2075,7 +2011,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Light Coral",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-light-coral.jpg",
+    slika: "matte-sjenilo-light-coral.jpg",
     opis: "MATTE kompaktno sjenilo u Light Coral nijansi. Mekana tekstura i visoko pokrivni pigmenti pružaju intenzivnu boju i precizno nanošenje. 3 g.",
     izdvojeno: false
 },
@@ -2084,7 +2020,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Green Tiffany",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-green-tiffany.jpg",
+    slika: "matte-sjenilo-green-tiffany.jpg",
     opis: "Kompaktno MATTE sjenilo u Green Tiffany nijansi s intenzivnom pigmentacijom i mat završetkom. Mekana tekstura omogućuje jednostavno i ugodno nanošenje. 3 g.",
     izdvojeno: false
 },
@@ -2093,7 +2029,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Elegant Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-elegant-rose.jpg",
+    slika: "matte-sjenilo-elegant-rose.jpg",
     opis: "MATTE sjenilo u Elegant Rose nijansi s izuzetno mekanom teksturom, intenzivnom pigmentacijom i dodatnim mat završetkom. 3 g.",
     izdvojeno: false
 },
@@ -2102,7 +2038,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Crna",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-crna.jpg",
+    slika: "matte-sjenilo-crna.jpg",
     opis: "Intenzivno crno MATTE kompaktno sjenilo s mekanom teksturom i snažnom pigmentacijom. Pruža izražen mat efekt i jednostavno nanošenje. 3 g.",
     izdvojeno: false
 },
@@ -2111,7 +2047,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Ljubičasta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-ljubicasta.jpg",
+    slika: "matte-sjenilo-ljubicasta.jpg",
     opis: "MATTE kompaktno sjenilo u ljubičastoj nijansi s izuzetno mekanom teksturom. Pruža trenutnu intenzivnu boju i ekstra mat završetak. 3 g.",
     izdvojeno: false
 },
@@ -2120,7 +2056,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Chocolate",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-chocolate.jpg",
+    slika: "matte-sjenilo-chocolate.jpg",
     opis: "MATTE sjenilo u Chocolate nijansi s mekanom i nježnom teksturom. Intenzivna pigmentacija pruža bogatu boju i mat završetak. 3 g.",
     izdvojeno: false
 },
@@ -2129,7 +2065,7 @@ const proizvodi = [
     naziv: "MATTE kompaktno sjenilo – Chalk White",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/matte-sjenilo-chalk-white.jpg",
+    slika: "matte-sjenilo-chalk-white.jpg",
     opis: "Kompaktno MATTE sjenilo u Chalk White nijansi s mekanom teksturom, intenzivnom pigmentacijom i ekstra mat završetkom. 3 g.",
     izdvojeno: false
 },
@@ -2138,7 +2074,7 @@ const proizvodi = [
     naziv: "Kompaktno sjenilo – Bright Bronze",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/kompaktno-sjenilo-bright-bronze.jpg",
+    slika: "kompaktno-sjenilo-bright-bronze.jpg",
     opis: "Visoko pigmentirano kompaktno sjenilo sa svilenkastom teksturom i sjajnim završetkom. Sadrži biserne čestice za bogatu refleksiju svjetlosti, a formula je obogaćena Aloe Verom i vitaminom E. 3 g.",
     izdvojeno: false
 },
@@ -2147,7 +2083,7 @@ const proizvodi = [
     naziv: "Paleta s 9 sjenila – Autumn Vibes",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/paleta-sjenila-autumn-vibes.jpg",
+    slika: "paleta-sjenila-autumn-vibes.jpg",
     opis: "Paleta s 9 sjenila intenzivnih boja i efektnog završetka. Visoko pokrivna kremasta tekstura stapa se s kapcima i pruža dugotrajnu boju te profesionalan rezultat. 18 g.",
     izdvojeno: false
 },
@@ -2156,7 +2092,7 @@ const proizvodi = [
     naziv: "Paleta s 9 sjenila – Winter Queen",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/paleta-sjenila-winter-queen.jpg",
+    slika: "paleta-sjenila-winter-queen.jpg",
     opis: "Paleta Winter Queen s 9 intenzivnih nijansi za blistav i upečatljiv pogled. Kremasta i visoko pokrivna tekstura pruža dugotrajnu boju i profesionalan rezultat. 18 g.",
     izdvojeno: false
 },
@@ -2165,7 +2101,7 @@ const proizvodi = [
     naziv: "Paleta s 9 sjenila – Proljetno cvijeće",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-   slika: "slike/paleta-sjenila-proljetno-cvijece.jpg",
+    slika: "paleta-sjenila-proljetno-cvijece.jpg",
     opis: "Paleta s 9 sjenila intenzivnih boja i upečatljivog završetka. Kremasta, visoko pokrivna tekstura stapa se s kapcima i pruža čistu dugotrajnu boju. 18 g.",
     izdvojeno: false
 },
@@ -2174,7 +2110,7 @@ const proizvodi = [
     naziv: "DIAMOND CREAM sjenilo za oči – Bronze",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/diamond-cream-bronze.jpg",
+    slika: "diamond-cream-bronze.jpg",
     opis: "Tekuće sjenilo za oči s reflektirajućim pigmentima koji stvaraju intenzivne svjetlucave naglaske. Mekana i bogata tekstura pruža sjajan i dugotrajan završetak te jednostavno nanošenje. 5 g.",
     izdvojeno: false
 },
@@ -2183,7 +2119,7 @@ const proizvodi = [
     naziv: "DIAMOND CREAM sjenilo za oči – Metallic Copper",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/diamond-cream-metallic-copper.jpg",
+    slika: "diamond-cream-metallic-copper.jpg",
     opis: "Tekuće sjenilo u Metallic Copper nijansi s reflektirajućim pigmentima. Izuzetno mekana i bogata tekstura pruža intenzivan sjaj, dugotrajan završetak i jednostavno nanošenje. 5 g.",
     izdvojeno: false
 },
@@ -2192,7 +2128,7 @@ const proizvodi = [
     naziv: "DIAMOND CREAM sjenilo za oči – Šampanjac",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/diamond-cream-sampanjac.jpg",
+    slika: "diamond-cream-sampanjac.jpg",
     opis: "Tekuće sjenilo u elegantnoj nijansi šampanjca s reflektirajućim pigmentima. Pruža intenzivne svjetlucave naglaske, bogatu teksturu i dugotrajan sjajni završetak. 5 g.",
     izdvojeno: false
 },
@@ -2201,7 +2137,7 @@ const proizvodi = [
     naziv: "Chogan Extra Volume maskara",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/chogan-extra-volume-maskara.jpg",
+    slika: "chogan-extra-volume-maskara.jpg",
     opis: "Maskara za duže, uvijene i voluminozne trepavice već nakon jednog poteza. Formula s prirodnim voskovima i pantenolom pruža punoću i sjaj, dok posebna četkica ravnomjerno raspoređuje proizvod i doseže čak i najkraće trepavice. 9 ml.",
     izdvojeno: false
 },
@@ -2210,7 +2146,7 @@ const proizvodi = [
     naziv: "MoniAmori Solar Defence SPF 30 – Tiramisu",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/solar-defence-tiramisu.jpg",
+    slika: "solar-defence-tiramisu.jpg",
     opis: "Kompaktni puder sa SPF 30 za sve tipove kože. Kremasta tekstura pretvara se u mekani puder, ujednačava ten i štiti od UVA i UVB zraka. Veganska formula bez talka i parabena ostavlja kožu mekom i hidratiziranom.",
     izdvojeno: false
 },
@@ -2219,8 +2155,8 @@ const proizvodi = [
     naziv: "MoniAmori Solar Defence SPF 30 – Creme Caramel",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/solar-defence-creme-caramel.jpg",
-    opis: "Kompaktni puder sa SPF 30 u nijansi Creme Caramel. Ujednačava ten, pruža dugotrajan završetak i pomaže zaštititi kožu od UVA i UVB zraka. Veganska formula bez talka i parabena.",
+    slika: "solar-defence-creme-caramel.jpg",
+    opis: "Kompaktni puder sa SPF 30 u nijansi Creme Caramel. Ujednačava ten, pruža dugotrajan završetak i pomaže zaštititi kožu od UVA i UVB zraka.",
     izdvojeno: false
 },
 {
@@ -2228,8 +2164,8 @@ const proizvodi = [
     naziv: "MoniAmori Solar Defence SPF 30 – Cinnamon Roll",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/solar-defence-cinnamon-roll.jpg",
-    opis: "Kompaktni puder sa SPF 30 u nijansi Cinnamon Roll. Kremasta i ugodna tekstura pruža ujednačen završetak, zaglađuje izgled nesavršenosti te štiti od UVA i UVB zraka.",
+    slika: "solar-defence-cinnamon-roll.jpg",
+    opis: "Kompaktni puder sa SPF 30 u nijansi Cinnamon Roll. Kremasta tekstura pruža ujednačen završetak i zaštitu od UVA i UVB zraka.",
     izdvojeno: false
 },
 {
@@ -2237,8 +2173,8 @@ const proizvodi = [
     naziv: "MoniAmori Solar Defence SPF 30 – Amaretto",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/solar-defence-amaretto.jpg",
-    opis: "Kompaktni puder sa SPF 30 u nijansi Amaretto. Formula ujednačava ten, zaglađuje izgled nesavršenosti i pruža zaštitu od UVA i UVB zraka, ostavljajući kožu mekom i hidratiziranom.",
+    slika: "solar-defence-amaretto.jpg",
+    opis: "Kompaktni puder sa SPF 30 u nijansi Amaretto. Formula ujednačava ten i pruža zaštitu od UVA i UVB zraka.",
     izdvojeno: false
 },
 {
@@ -2246,8 +2182,8 @@ const proizvodi = [
     naziv: "MoniAmori Solar Defence SPF 30 – Meringa",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/solar-defence-meringa.jpg",
-    opis: "Kompaktni puder sa SPF 30 u nijansi Meringa. Kremasta tekstura pretvara se u mekani puder i pruža dugotrajan, ujednačen završetak uz zaštitu od UVA i UVB zraka.",
+    slika: "solar-defence-meringa.jpg",
+    opis: "Kompaktni puder sa SPF 30 u nijansi Meringa. Kremasta tekstura pruža dugotrajan i ujednačen završetak uz zaštitu od UVA i UVB zraka.",
     izdvojeno: false
 },
 {
@@ -2255,8 +2191,8 @@ const proizvodi = [
     naziv: "Prešano rumenilo – Warm Beige",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešano rumenilo meke i kremaste teksture koje se lako nanosi i stapa s kožom. Pruža blistav i prirodan završetak, a formula s vitaminom E doprinosi ugodnom osjećaju na koži.",
+    slika: "presano-rumenilo-warm-beige.jpg",
+    opis: "Prešano rumenilo meke i kremaste teksture koje se lako nanosi i stapa s kožom.",
     izdvojeno: false
 },
 {
@@ -2264,8 +2200,8 @@ const proizvodi = [
     naziv: "Prešano rumenilo – Peach",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešano rumenilo u Peach nijansi s mekanom i kremastom teksturom. Omogućuje ravnomjerno nanošenje i prirodan završetak bez puderastih ostataka.",
+    slika: "presano-rumenilo-peach.jpg",
+    opis: "Prešano rumenilo u Peach nijansi s mekanom i kremastom teksturom.",
     izdvojeno: false
 },
 {
@@ -2273,8 +2209,8 @@ const proizvodi = [
     naziv: "Prešano rumenilo – Strawberry",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešano rumenilo u Strawberry nijansi s mekanom i kremastom teksturom. Lako se nanosi, dobro prianja uz kožu i pruža prirodan efekt rumenila.",
+    slika: "presano-rumenilo-strawberry.jpg",
+    opis: "Prešano rumenilo u Strawberry nijansi za svjež i prirodan izgled.",
     izdvojeno: false
 },
 {
@@ -2282,8 +2218,8 @@ const proizvodi = [
     naziv: "Prešano rumenilo – Raspberry",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešano rumenilo u Raspberry nijansi s ugodnom kremastom teksturom. Pruža ravnomjerno prekrivanje, prirodan izgled i jednostavno nanošenje.",
+    slika: "presano-rumenilo-raspberry.jpg",
+    opis: "Prešano rumenilo u Raspberry nijansi s ugodnom kremastom teksturom.",
     izdvojeno: false
 },
 {
@@ -2291,8 +2227,8 @@ const proizvodi = [
     naziv: "Prešani bronzer – Terracotta",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešani bronzer u Terracotta nijansi s mekanom i kremastom teksturom. Stapa se s kožom i pruža prirodan efekt osunčanog tena. Formula bez talka omogućuje ravnomjerno i slojevito nanošenje.",
+    slika: "presani-bronzer-terracotta.jpg",
+    opis: "Prešani bronzer u Terracotta nijansi za prirodan efekt osunčanog tena.",
     izdvojeno: false
 },
 {
@@ -2300,8 +2236,8 @@ const proizvodi = [
     naziv: "Prešani bronzer – First Ten",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešani bronzer u First Ten nijansi koji pruža prirodan efekt osunčanog tena. Mekana kremasta tekstura lako se nanosi i stapa s kožom, a formula ne sadrži talk.",
+    slika: "presani-bronzer-first-ten.jpg",
+    opis: "Prešani bronzer u First Ten nijansi s mekanom teksturom i prirodnim završetkom.",
     izdvojeno: false
 },
 {
@@ -2309,8 +2245,8 @@ const proizvodi = [
     naziv: "Prešani bronzer – Biscuit",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Prešani bronzer u Biscuit nijansi s mekanom i kremastom teksturom. Omogućuje slojevito i ravnomjerno nanošenje bez puderastih ostataka te pruža prirodan osunčani izgled.",
+    slika: "presani-bronzer-biscuit.jpg",
+    opis: "Prešani bronzer u Biscuit nijansi za prirodan osunčani izgled.",
     izdvojeno: false
 },
 {
@@ -2318,8 +2254,8 @@ const proizvodi = [
     naziv: "Korektor – Light Beige",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Korektor u Light Beige nijansi za ujednačavanje tena i prikrivanje nepravilnosti na koži.",
+    slika: "korektor-light-beige.jpg",
+    opis: "Korektor u Light Beige nijansi za ujednačavanje tena i prikrivanje nepravilnosti.",
     izdvojeno: false
 },
 {
@@ -2327,8 +2263,8 @@ const proizvodi = [
     naziv: "Korektor – Ivory Green",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Korektor u Ivory Green nijansi za korekciju izgleda nepravilnosti i ujednačavanje izgleda tena.",
+    slika: "korektor-ivory-green.jpg",
+    opis: "Korektor u Ivory Green nijansi za korekciju izgleda nepravilnosti.",
     izdvojeno: false
 },
 {
@@ -2336,8 +2272,8 @@ const proizvodi = [
     naziv: "Korektor – Honey",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Korektor u Honey nijansi za prikrivanje nepravilnosti i postizanje ujednačenijeg izgleda kože.",
+    slika: "korektor-honey.jpg",
+    opis: "Korektor u Honey nijansi za prikrivanje nepravilnosti i ujednačavanje tena.",
     izdvojeno: false
 },
 {
@@ -2345,7 +2281,7 @@ const proizvodi = [
     naziv: "Korektor – Warm Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
+    slika: "korektor-warm-rose.jpg",
     opis: "Korektor u Warm Rose nijansi za korekciju i ujednačavanje izgleda tena.",
     izdvojeno: false
 },
@@ -2354,8 +2290,8 @@ const proizvodi = [
     naziv: "Korektor – Ivory",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Korektor u Ivory nijansi namijenjen prikrivanju nepravilnosti i stvaranju ujednačenog izgleda tena.",
+    slika: "korektor-ivory.jpg",
+    opis: "Korektor u Ivory nijansi namijenjen prikrivanju nepravilnosti.",
     izdvojeno: false
 },
 {
@@ -2363,8 +2299,8 @@ const proizvodi = [
     naziv: "Korektor – Cool Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Korektor u Cool Rose nijansi za korekciju izgleda kože i postizanje ujednačenijeg tena.",
+    slika: "korektor-cool-rose.jpg",
+    opis: "Korektor u Cool Rose nijansi za korekciju izgleda kože.",
     izdvojeno: false
 },
 {
@@ -2372,8 +2308,8 @@ const proizvodi = [
     naziv: "Jumbo korektor u olovci – Ivory",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Jumbo korektor u olovci u Ivory nijansi. Praktičan format olovke omogućuje jednostavno i precizno nanošenje na željena područja lica.",
+    slika: "jumbo-korektor-ivory.jpg",
+    opis: "Jumbo korektor u olovci u Ivory nijansi za jednostavno i precizno nanošenje.",
     izdvojeno: false
 },
 {
@@ -2381,8 +2317,8 @@ const proizvodi = [
     naziv: "Jumbo korektor u olovci – Light Beige",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Jumbo korektor u olovci u Light Beige nijansi. Praktičan format omogućuje precizno nanošenje i jednostavnu korekciju izgleda nepravilnosti.",
+    slika: "jumbo-korektor-light-beige.jpg",
+    opis: "Jumbo korektor u olovci u Light Beige nijansi za precizno nanošenje.",
     izdvojeno: false
 },
 {
@@ -2390,17 +2326,21 @@ const proizvodi = [
     naziv: "Jumbo korektor u olovci – Light Rose",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
-    slika: "slike/makeup.png",
-    opis: "Jumbo korektor u olovci u Light Rose nijansi. Jednostavan je za ciljano i precizno nanošenje na željena područja lica.",
+    slika: "jumbo-korektor-light-rose.jpg",
+    opis: "Jumbo korektor u olovci u Light Rose nijansi za ciljano nanošenje.",
     izdvojeno: false
 },
+
+// Od ID 257 nadalje pojedinačne slike još nismo dodali,
+// zato privremeno koriste slike/makeup.png.
+
 {
     id: 257,
     naziv: "Perfect Hydra Foundation – Caramel",
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Tekući puder lagane teksture i baršunastog završetka koji ujednačava ten i optički prikriva nepravilnosti. Veganska formula bez parabena obogaćena je zelenim čajem, sastojcima za hidrataciju i uljem maka.",
+    opis: "Tekući puder lagane teksture i baršunastog završetka koji ujednačava ten i optički prikriva nepravilnosti.",
     izdvojeno: false
 },
 {
@@ -2409,7 +2349,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Tekući puder lagane teksture u Peach nijansi. Pruža baršunast završetak, ujednačava ten i pomaže optički prikriti nepravilnosti. Formula s hidratantnim, zaštitnim i anti-age sastojcima.",
+    opis: "Tekući puder lagane teksture u Peach nijansi s baršunastim završetkom.",
     izdvojeno: false
 },
 {
@@ -2418,7 +2358,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Tekući puder u Beige nijansi s laganom teksturom i baršunastim završetkom. Ujednačava izgled tena, a formula sa zelenim čajem, hidratantnim sastojcima i uljem maka njeguje kožu.",
+    opis: "Tekući puder u Beige nijansi koji ujednačava izgled tena i pruža baršunast završetak.",
     izdvojeno: false
 },
 {
@@ -2427,7 +2367,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Perfect Hydra tekući puder u Neutral nijansi za ujednačen i zaglađen izgled tena. Lagana formula pruža baršunast završetak te sadrži hidratantne, zaštitne i anti-age sastojke.",
+    opis: "Perfect Hydra tekući puder u Neutral nijansi za ujednačen i zaglađen izgled tena.",
     izdvojeno: false
 },
 {
@@ -2436,7 +2376,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Tekući puder u Ivory nijansi s laganom teksturom i baršunastim završetkom. Ujednačava ten i optički prikriva nepravilnosti, dok formula sa zelenim čajem i uljem maka pruža njegu kože.",
+    opis: "Tekući puder u Ivory nijansi s laganom teksturom i baršunastim završetkom.",
     izdvojeno: false
 },
 {
@@ -2445,7 +2385,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Dugotrajna tekuća podloga s izvrsnim prekrivanjem koja prikriva nepravilnosti i pruža ujednačen, prirodan ten. Brzo se suši i ostavlja baršunasto mat završetak. Veganska formula bez parabena obogaćena je ekstraktima crne ruže, ginsenga i perunike te uljem sjemenki kave.",
+    opis: "Dugotrajna tekuća podloga s izvrsnim prekrivanjem i baršunasto mat završetkom.",
     izdvojeno: false
 },
 {
@@ -2454,7 +2394,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Dugotrajna tekuća podloga u Dark Beige nijansi s visokom moći prekrivanja. Pruža ujednačen i prirodan izgled tena te baršunasto mat završetak. Formula je veganska i bez parabena.",
+    opis: "Dugotrajna tekuća podloga u Dark Beige nijansi s visokom moći prekrivanja.",
     izdvojeno: false
 },
 {
@@ -2463,7 +2403,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Tekuća podloga u Pink Nude nijansi koja pruža izvrsno prekrivanje i dugotrajan ujednačen izgled tena. Brzo se suši i pruža baršunasto mat završetak, uz vegansku formulu bez parabena.",
+    opis: "Tekuća podloga u Pink Nude nijansi koja pruža dobro prekrivanje i mat završetak.",
     izdvojeno: false
 },
 {
@@ -2472,7 +2412,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Dugotrajna tekuća podloga u Medium Beige nijansi s izvrsnim prekrivanjem. Pomaže prikriti nepravilnosti, ujednačava izgled tena i pruža prirodan baršunasto mat završetak.",
+    opis: "Dugotrajna tekuća podloga u Medium Beige nijansi s ujednačenim mat završetkom.",
     izdvojeno: false
 },
 {
@@ -2481,7 +2421,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "2-u-1 stick za lice i usne s mat završetkom i nadogradivom pokrivenošću. Kremasta tekstura lako se nanosi i blenda, a veganska formula bez parabena obogaćena je uljem i brašnom zobi te Aloe Verom.",
+    opis: "2-u-1 stick za lice i usne s mat završetkom i nadogradivom pokrivenošću.",
     izdvojeno: false
 },
 {
@@ -2490,7 +2430,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "2-u-1 stick u nijansi Breskva namijenjen licu i usnama. Pruža mat završetak i nadogradivu pokrivenost, dok kremasta tekstura omogućuje glatko i precizno nanošenje.",
+    opis: "2-u-1 stick u nijansi Breskva namijenjen licu i usnama.",
     izdvojeno: false
 },
 {
@@ -2499,7 +2439,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "2-u-1 stick za lice i usne u nijansi Jagodičasto voće. Kremasta tekstura pruža jednostavno blendanje, mat završetak i svjež izgled. Veganska formula sadrži zob i Aloe Veru.",
+    opis: "2-u-1 stick za lice i usne u nijansi Jagodičasto voće.",
     izdvojeno: false
 },
 {
@@ -2508,7 +2448,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Stick za konturiranje s mat završetkom i nadogradivom pokrivenošću, namijenjen oblikovanju lica i naglašavanju kontura. Kremasta tekstura omogućuje glatko i precizno nanošenje. Veganska formula bez parabena obogaćena je zobi i Aloe Verom.",
+    opis: "Stick za konturiranje s mat završetkom i nadogradivom pokrivenošću.",
     izdvojeno: false
 },
 {
@@ -2517,7 +2457,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Sculpt & Lift stick u Ebony nijansi za oblikovanje lica i redefiniranje kontura. Pruža mat završetak i nadogradivu pokrivenost, dok kremasta tekstura omogućuje jednostavno blendanje i precizno nanošenje.",
+    opis: "Sculpt & Lift stick u Ebony nijansi za oblikovanje i naglašavanje kontura lica.",
     izdvojeno: false
 },
 {
@@ -2526,7 +2466,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Sculpt & Lift stick u Clay nijansi s mat završetkom i nadogradivom pokrivenošću. Kremasta tekstura olakšava oblikovanje i naglašavanje kontura lica, a formula je veganska i bez parabena.",
+    opis: "Sculpt & Lift stick u Clay nijansi s mat završetkom.",
     izdvojeno: false
 },
 {
@@ -2535,7 +2475,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Highlighter stick mekog i svilenkastog dodira za osvjetljavanje lica i dekoltea. Kremasta tekstura lako se blenda i pruža trenutan sjaj. Veganska formula bez parabena obogaćena je arganovim uljem, vitaminom E i ekstraktom ginsenga.",
+    opis: "Highlighter stick mekog i svilenkastog dodira za osvjetljavanje lica i dekoltea.",
     izdvojeno: false
 },
 {
@@ -2544,7 +2484,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Highlighter stick u Rose Gold nijansi za naglašavanje i osvjetljavanje lica i dekoltea. Kremasta i lako blendabilna tekstura pruža trenutan sjaj, a formula sadrži arganovo ulje, vitamin E i ekstrakt ginsenga.",
+    opis: "Highlighter stick u Rose Gold nijansi za naglašavanje i osvjetljavanje lica.",
     izdvojeno: false
 },
 {
@@ -2553,7 +2493,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Highlighter stick u Bronze nijansi s mekim i svilenkastim dodirom. Jednostavno se nanosi i blenda te pruža trenutan sjaj. Veganska formula bez parabena obogaćena je arganovim uljem, vitaminom E i ekstraktom ginsenga.",
+    opis: "Highlighter stick u Bronze nijansi s mekim i svilenkastim dodirom.",
     izdvojeno: false
 },
 {
@@ -2562,7 +2502,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice za intenzivan Bambi pogled, idealne za romantičan i sofisticiran stil. Prikladne su za svakodnevno nošenje i posebne prilike te se uz pravilno čišćenje i čuvanje mogu ponovno koristiti. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice za intenzivan Bambi pogled. Uz pravilno održavanje mogu se ponovno koristiti. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2571,7 +2511,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice za intenzivan i izražajan pogled. Prikladne su za svakodnevno nošenje ili posebne prilike, a uz pravilno čišćenje i čuvanje mogu se ponovno koristiti. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice za intenzivan i izražajan pogled. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2580,7 +2520,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice za intenzivan i senzualan pogled te elegantan i besprijekoran izgled. Mogu se koristiti svakodnevno ili za posebne prilike i ponovno koristiti uz pravilno održavanje. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice za intenzivan i senzualan pogled. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2589,7 +2529,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice za intenzivan i zanosan pogled, namijenjene upečatljivom izgledu. Mogu se koristiti svakodnevno ili za posebne prilike te ponovno koristiti uz pravilno čišćenje i čuvanje. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice za intenzivan i upečatljiv pogled. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2598,7 +2538,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice za intenzivan, ali prirodan pogled. Odgovaraju klasičnom i elegantnom stilu te se mogu koristiti svakodnevno ili za posebne prilike. Uz pravilno održavanje mogu se ponovno koristiti. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice za intenzivan, ali prirodan i elegantan izgled. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2607,7 +2547,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Umjetne trepavice u čupercima dostupne u tri različite dužine za personaliziran i prirodan izgled. Omogućuju prilagođavanje željenog efekta i prikladne su za različite stilove. Ljepilo nije uključeno.",
+    opis: "Umjetne trepavice u čupercima u tri različite dužine za personaliziran i prirodan izgled. Ljepilo nije uključeno.",
     izdvojeno: false
 },
 {
@@ -2616,7 +2556,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Ljepilo za umjetne trepavice koje osigurava čvrsto prianjanje i brzo se suši. Praktična četkica omogućuje precizno nanošenje za uredan i besprijekoran izgled trepavica.",
+    opis: "Ljepilo za umjetne trepavice s praktičnom četkicom za precizno nanošenje.",
     izdvojeno: false
 },
 {
@@ -2625,7 +2565,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Praktičan aplikator koji omogućuje precizno i jednostavno postavljanje umjetnih trepavica. Pogodan je za trakaste trepavice i čuperke te olakšava nanošenje i pozicioniranje trepavica.",
+    opis: "Praktičan aplikator za precizno i jednostavno postavljanje umjetnih trepavica.",
     izdvojeno: false
 },
 {
@@ -2634,7 +2574,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Maskara za maksimalnu dužinu i definiciju koja zahvaljujući mješavini voskova pruža slojeviti volumen i panoramski efekt. Fleksibilni aplikator hvata, razdvaja i produžuje svaku trepavicu. Kremasta tekstura intenzivne crne boje brzo se suši te ostaje mekana i fleksibilna tijekom nošenja.",
+    opis: "Maskara za maksimalnu dužinu i definiciju koja pruža slojeviti volumen i panoramski efekt.",
     izdvojeno: false
 },
 {
@@ -2643,7 +2583,7 @@ const proizvodi = [
     kategorija: "makeup",
     kategorijaNaziv: "Make Up",
     slika: "slike/makeup.png",
-    opis: "Vodootporna uvijajuća maskara koja definira i razdvaja trepavice zahvaljujući anatomskoj četkici. Pruža efekt volumena te je otporna na vodu, trljanje i visoke temperature bez razmazivanja. Formula s karnauba voskom daje volumen bez stvaranja grudica i pruža odličnu fiksaciju.",
+    opis: "Vodootporna uvijajuća maskara koja definira i razdvaja trepavice te pruža efekt volumena.",
     izdvojeno: false
 }
 
