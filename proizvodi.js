@@ -1210,7 +1210,7 @@ const proizvodi = [
     naziv: "ROSÉA – Ruža i cimet",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/rosea-ruza-cimet.jpg",
+    slika: "slike/svijeca-rosea.jpg",
     opis: "Mirisna svijeća s elegantnom kombinacijom ruže i cimeta za toplu i ugodnu atmosferu.",
     izdvojeno: false
 },
@@ -1219,7 +1219,7 @@ const proizvodi = [
     naziv: "MUSKÉ – Bijeli mošus",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/muske-bijeli-mosus.jpg",
+    slika: "slike/svijeca-muske.jfif",
     opis: "Mirisna svijeća s nježnim i profinjenim karakterom bijelog mošusa.",
     izdvojeno: false
 },
@@ -1228,7 +1228,7 @@ const proizvodi = [
     naziv: "LAVÉA – Baršunasta lavanda",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/lavea-barsunasta-lavanda.jpg",
+    slika: "slike/svijeca-lavea.jpg",
     opis: "Mirisna svijeća s umirujućim i elegantnim mirisom baršunaste lavande.",
     izdvojeno: false
 },
@@ -1237,7 +1237,7 @@ const proizvodi = [
     naziv: "MÉLIA – Med i jasmin",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/melia-med-jasmin.jpg",
+    slika: "slike/svijeca-melia.jpg",
     opis: "Mirisna svijeća koja spaja toplinu meda s profinjenim cvjetnim karakterom jasmina.",
     izdvojeno: false
 },
@@ -1246,10 +1246,12 @@ const proizvodi = [
     naziv: "NOIRÉ – Slatko drvo",
     kategorija: "svijece",
     kategorijaNaziv: "Mirisne svijeće",
-    slika: "slike/noire-slatko-drvo.jpg",
+    slika: "slike/svijeca-noire.jpg",
     opis: "Mirisna svijeća toplog i elegantnog karaktera sa slatkim drvenastim mirisnim dojmom.",
     izdvojeno: false
 },
+
+    
 {
     id: 137,
     naziv: "Extra-LipStay – Purple Mocha",
